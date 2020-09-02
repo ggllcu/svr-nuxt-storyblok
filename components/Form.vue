@@ -37,7 +37,7 @@
         </b-field>
         <b-field><!-- Label left empty for spacing -->
         <p class="control">
-          <button class="button" type="submit">Invia</button>
+          <button class="button is-fullwidth" type="submit">Invia</button>
         </p>
       </b-field>
       </form>
