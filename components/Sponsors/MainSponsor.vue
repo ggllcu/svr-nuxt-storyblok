@@ -27,15 +27,11 @@
         </nuxt-link>
       </div>
     </div>
-    <MainSponsor />
   </section>
 </template>
 
 <script>
 export default {
-  components: {
-    MainSponsor: () => import('@/components/Sponsors/MainSponsor')
-  },
   data () {
     return { total: 0, data: { stories: [] } }
   },
@@ -52,7 +48,7 @@ export default {
         }
       }
     }).then((res) => {
-      console.log(res.data.stories)
+      console.log('stories', res.data.stories)
       return res
     }).catch((res) => {
       context.error({ statusCode: res.response.status, message: res.response.data })
@@ -60,10 +56,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-figure.image {
-  background: no-repeat center ;
-  background-size: cover;
-}
-</style>
