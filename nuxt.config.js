@@ -37,6 +37,7 @@ export default {
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
+    '~plugins/filters.js',
     '~/plugins/components'
   ],
   /*
@@ -103,7 +104,7 @@ export default {
     routes: function (callback) {
       const token = '34avQMupdMtN0r8mDGVVTgtt'
       const version = 'published'
-      let cache_version = 0
+      let cacheVersion = 0
 
       let toIgnore = [
         'home',
@@ -119,10 +120,10 @@ export default {
       axios.get(`https://api.storyblok.com/v1/cdn/spaces/me?token=${token}`).then((space_res) => {
 
         // timestamp of latest publish
-        cache_version = space_res.data.space.version
+        cacheVersion = space_res.data.space.version
 
         // Call for all Links using the Links API: https://www.storyblok.com/docs/Delivery-Api/Links
-        axios.get(`https://api.storyblok.com/v1/cdn/links?token=${token}&version=${version}&cv=${cache_version}&per_page=100`).then((res) => {
+        axios.get(`https://api.storyblok.com/v1/cdn/links?token=${token}&version=${version}&cv=${cacheVersion}&per_page=100`).then((res) => {
           Object.keys(res.data.links).forEach((key) => {
             if (!toIgnore.includes(res.data.links[key].slug)) {
               routes.push('/' + res.data.links[key].slug)
@@ -133,5 +134,6 @@ export default {
         })
       })
     }
-  }
+  },
+  loading: false
 }

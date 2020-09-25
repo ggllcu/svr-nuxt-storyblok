@@ -5,7 +5,7 @@
         <nuxt-link :to="'/' + post.full_slug">
           <div class="card">
             <div class="card-image">
-              <figure class="image is-4by3" :style="`background-image: url(${post.content.image})`">
+              <figure class="image is-4by3" :style="`background-image: url(${ transformImage(post.content.image, '368x276') })`">
               </figure>
             </div>
             <div class="card-content">
@@ -31,6 +31,16 @@
 
 <script>
 export default {
+  methods: {
+    transformImage (image, option) {
+      if (!image) { return '' }
+      if (!option) { return '' }
+
+      const imageService = '//img2.storyblok.com/'
+      const path = image.replace('//a.storyblok.com', '')
+      return imageService + option + path
+    }
+  },
   data () {
     return { total: 0, data: { stories: [] } }
   },

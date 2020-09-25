@@ -33,3 +33,30 @@ $fullhd-enabled: false;
 @import "~bulma";
 @import "~buefy/src/scss/buefy";
 
+.body {
+  background: $primary;
+}
+
+header {
+  z-index: 10;
+}
+
+.main {
+  background: #fff;
+}
+
+// Transitions
+.page-enter-active,
+.page-leave-active {
+  z-index: 1;
+  transition: all 0.5s;
+}
+.page-enter {
+  z-index: 1;
+  transform: translate(0, -100%);
+}
+.page-leave-to {
+  z-index: 1;
+  transform: translate(0, -100%);
+}
+

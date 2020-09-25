@@ -12,15 +12,11 @@
 </template>
 
 <script>
-import Header from '~/components/Header.vue'
-import Footer from '~/components/Footer.vue'
-import Form from '~/components/Form'
-
 export default {
   components: {
-    Header,
-    Footer,
-    Form
+    Header: () => import('@/components/Header.vue'),
+    Footer: () => import('@/components/Footer.vue'),
+    Form: () => import('@/components/Form.vue')
   }
 }
 </script>
