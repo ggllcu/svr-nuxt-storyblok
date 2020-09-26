@@ -37,8 +37,8 @@ export default {
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
-    '~plugins/filters.js',
-    '~/plugins/components'
+    '~/plugins/filters.js',
+    '~/plugins/components.js'
   ],
   /*
   ** Auto import components
