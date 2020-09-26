@@ -8,4 +8,5 @@
 export default {
   props: ['blok']
 }
+console.log('type: ', typeof blok)
 </script>

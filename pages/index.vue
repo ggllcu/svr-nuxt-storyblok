@@ -1,11 +1,25 @@
 <template>
   <section>
-    <component v-if="story.content.component" :key="story.content._uid" :blok="story.content" :is="story.content.component"></component>
+    <component :is="story.content.component" v-if="story.content.component" :key="story.content._uid" :blok="story.content" />
   </section>
 </template>
 
 <script>
 export default {
+  asyncData (context) {
+    // Load the JSON from the API
+    return context.app.$storyapi.get('cdn/stories/it/home', {
+      version: 'draft'
+    }).then((res) => {
+      return res.data
+    }).catch((res) => {
+      if (!res.response) {
+        context.error({ statusCode: 404, message: 'Failed to receive content form api' })
+      } else {
+        context.error({ statusCode: res.response.status, message: res.response.data })
+      }
+    })
+  },
   data () {
     return {
       story: { content: {} }
@@ -24,22 +38,6 @@ export default {
           path: this.$nuxt.$router.currentRoute,
           force: true
         })
-      }
-    })
-  },
-  asyncData (context) {
-    // Load the JSON from the API
-    return context.app.$storyapi.get('cdn/stories/it/home', {
-      version: 'draft'
-    }).then((res) => {
-      return res.data
-    }).catch((res) => {
-      if (!res.response) {
-        console.error(res)
-        context.error({ statusCode: 404, message: 'Failed to receive content form api' })
-      } else {
-        console.error(res.response.data)
-        context.error({ statusCode: res.response.status, message: res.response.data })
       }
     })
   }

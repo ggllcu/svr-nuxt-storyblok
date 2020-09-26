@@ -53,10 +53,10 @@ header {
 }
 .page-enter {
   z-index: 1;
-  transform: translate(0, -100%);
+  transform: translate(100%, 0);
 }
 .page-leave-to {
   z-index: 1;
-  transform: translate(0, -100%);
+  transform: translate(100%, 0);
 }
 

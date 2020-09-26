@@ -1,9 +1,7 @@
 export const state = () => ({
   cacheVersion: '',
   language: 'it',
-  settings: {
-    main_navi: []
-  }
+  mainSponsors: {}
 })
 
 export const mutations = {

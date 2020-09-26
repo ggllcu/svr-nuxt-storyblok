@@ -1,13 +1,14 @@
 <template>
   <section>
-    <h1 class="title is-2">Main Sponsor</h1>
+    <h1 class="title is-2">
+      Main Sponsor
+    </h1>
     <div class="columns is-multiline">
-      <div :key="post.content._uid" v-for="post in data.stories" class="column is-one-third">
+      <div v-for="post in data.stories" :key="post.content._uid" class="column is-one-third">
         <nuxt-link :to="'/' + post.full_slug">
           <div class="card">
             <div class="card-image">
-              <figure class="image is-4by3" :style="`background-image: url(${ transformImage(post.content.image, '368x276') })`">
-              </figure>
+              <figure class="image is-4by3" :style="`background-image: url(${ transformImage(post.content.image, '368x276') })`" />
             </div>
             <div class="card-content">
               <div class="media">
@@ -33,21 +34,8 @@
 
 <script>
 export default {
-  methods: {
-    transformImage (image, option) {
-      if (!image) { return '' }
-      if (!option) { return '' }
-
-      const imageService = '//img2.storyblok.com/'
-      const path = image.replace('//a.storyblok.com', '')
-      return imageService + option + path
-    }
-  },
   components: {
     MainSponsor: () => import('@/components/Sponsors/MainSponsor')
-  },
-  data () {
-    return { total: 0, data: { stories: [] } }
   },
   asyncData (context) {
     const version = context.query._storyblok || context.isDev ? 'draft' : 'published'
@@ -62,11 +50,23 @@ export default {
         }
       }
     }).then((res) => {
-      console.log(res.data.stories)
       return res
     }).catch((res) => {
       context.error({ statusCode: res.response.status, message: res.response.data })
     })
+  },
+  data () {
+    return { total: 0, data: { stories: [] } }
+  },
+  methods: {
+    transformImage (image, option) {
+      if (!image) { return '' }
+      if (!option) { return '' }
+
+      const imageService = '//img2.storyblok.com/'
+      const path = image.replace('//a.storyblok.com', '')
+      return imageService + option + path
+    }
   }
 }
 </script>
