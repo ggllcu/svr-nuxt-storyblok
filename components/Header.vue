@@ -2,7 +2,7 @@
   <header>
     <b-navbar class="is-primary container">
       <template slot="brand">
-        <b-navbar-item tag="router-link" :to="'/'">
+        <b-navbar-item tag="nuxt-link" :to="'/'">
           <img
             :src="'//a.storyblok.com/f/91547/309x458/25f06f46c6/logo_scaligera_valeggio_rugby.png' | transformImage('0x104')"
             alt="Scaligera Valeggio Rugby"
@@ -11,26 +11,26 @@
       </template>
       <template slot="end">
         <b-navbar-dropdown label="Società">
-          <b-navbar-item tag="router-link" :to="{ path: '/it/company/about' }">
+          <b-navbar-item tag="nuxt-link" :to="{ path: '/it/company/about' }">
             Scaligera Valeggio Rugby
           </b-navbar-item>
-          <b-navbar-item tag="router-link" :to="{ path: '/it/company/organigram' }">
+          <b-navbar-item tag="nuxt-link" :to="{ path: '/it/company/organigram' }">
             Organigramma
           </b-navbar-item>
-          <b-navbar-item tag="router-link" :to="{ path: '/it/company/teams' }">
+          <b-navbar-item tag="nuxt-link" :to="{ path: '/it/company/teams' }">
             Squadre
           </b-navbar-item>
-          <b-navbar-item tag="router-link" :to="{ path: '/it/company/structure' }">
+          <b-navbar-item tag="nuxt-link" :to="{ path: '/it/company/structure' }">
             Struttura
           </b-navbar-item>
         </b-navbar-dropdown>
-        <b-navbar-item tag="router-link" :to="{ path: '/it/sponsors' }">
+        <b-navbar-item tag="nuxt-link" :to="{ path: '/it/sponsors' }">
           Sponsor
         </b-navbar-item>
-        <b-navbar-item tag="router-link" :to="{ path: '/it/blog' }">
+        <b-navbar-item tag="nuxt-link" :to="{ path: '/it/blog' }">
           News
         </b-navbar-item>
-        <b-navbar-item tag="router-link" :to="{ path: '/it/contact' }">
+        <b-navbar-item tag="nuxt-link" :to="{ path: '/it/contact' }">
           Contatti
         </b-navbar-item>
       </template>
