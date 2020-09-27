@@ -8,6 +8,12 @@
 
 <script>
 export default {
-  props: ['blok']
+  props: {
+    blok: {
+      type: Object,
+      required: true,
+      default: null
+    }
+  }
 }
 </script>

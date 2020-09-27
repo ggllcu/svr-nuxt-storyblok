@@ -1,13 +1,14 @@
 <template>
   <section>
-    <h1 class="title is-2">Main Sponsor</h1>
+    <h1 class="title is-2">
+      Main Sponsor
+    </h1>
     <div class="columns is-multiline">
-      <div :key="post.content._uid" v-for="post in data.stories" class="column is-one-third">
+      <div v-for="post in data.stories" :key="post.content._uid" class="column is-one-third">
         <nuxt-link :to="'/' + post.full_slug">
           <div class="card">
             <div class="card-image">
-              <figure class="image is-4by3" :style="`background-image: url(${post.content.image})`">
-              </figure>
+              <figure class="image is-4by3" :style="`background-image: url(${post.content.image})`" />
             </div>
             <div class="card-content">
               <div class="media">
@@ -32,9 +33,6 @@
 
 <script>
 export default {
-  data () {
-    return { total: 0, data: { stories: [] } }
-  },
   asyncData (context) {
     const version = context.query._storyblok || context.isDev ? 'draft' : 'published'
 
@@ -48,11 +46,13 @@ export default {
         }
       }
     }).then((res) => {
-      console.log('stories', res.data.stories)
       return res
     }).catch((res) => {
       context.error({ statusCode: res.response.status, message: res.response.data })
     })
+  },
+  data () {
+    return { total: 0, data: { stories: [] } }
   }
 }
 </script>

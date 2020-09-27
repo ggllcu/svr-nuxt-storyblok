@@ -10,6 +10,13 @@
 
 <script>
 export default {
+  props: {
+    blok: {
+      type: Object,
+      required: true,
+      default: null
+    }
+  },
   computed: {
     resizedIcon () {
       if (typeof this.blok.icon !== 'undefined') {
@@ -18,7 +25,6 @@ export default {
       }
       return null
     }
-  },
-  props: ['blok']
+  }
 }
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <b-navbar-item tag="router-link" :to=link>
+  <b-navbar-item tag="router-link" :to="link">
     {{ name }}
   </b-navbar-item>
 </template>
@@ -8,8 +8,17 @@
 export default {
   name: 'NavItem',
   props: {
-    name: String,
-    link: Number
+    name: {
+      type: String,
+      required: true,
+      default: ''
+    },
+    link: {
+      type: String,
+      required: true,
+      default: ''
+
+    }
   }
 }
 </script>

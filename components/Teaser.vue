@@ -6,7 +6,12 @@
 
 <script>
 export default {
-  props: ['blok']
+  props: {
+    blok: {
+      type: Object,
+      required: true,
+      default: null
+    }
+  }
 }
-console.log('type: ', typeof blok)
 </script>

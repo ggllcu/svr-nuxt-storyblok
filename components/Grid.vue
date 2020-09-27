@@ -1,11 +1,17 @@
 <template>
   <div v-editable="blok">
-    <component :key="blok._uid" v-for="blok in blok.columns" :blok="blok" :is="blok.component"></component>
+    <component :is="blok.component" v-for="blok in blok.columns" :key="blok._uid" :blok="blok" />
   </div>
 </template>
 
 <script>
 export default {
-  props: ['blok']
+  props: {
+    blok: {
+      type: Object,
+      required: true,
+      default: null
+    }
+  }
 }
 </script>

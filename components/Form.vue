@@ -13,7 +13,7 @@
                 type="text"
                 name="nome expanded"
                 placeholder="Il tuo nome"
-              ></b-input>
+              />
             </b-field>
           </div>
           <div class="column">
@@ -23,7 +23,7 @@
                 name="email expanded"
                 placeholder="La tua email"
                 required
-              ></b-input>
+              />
             </b-field>
           </div>
         </div>
@@ -33,13 +33,16 @@
             name="messaggio"
             placeholder="Il tuo messaggio"
             required
-          ></b-input>
+          />
         </b-field>
-        <b-field><!-- Label left empty for spacing -->
-        <p class="control">
-          <button class="button is-fullwidth" type="submit">Invia</button>
-        </p>
-      </b-field>
+        <b-field>
+          <!-- Label left empty for spacing -->
+          <p class="control">
+            <button class="button is-fullwidth" type="submit">
+              Invia
+            </button>
+          </p>
+        </b-field>
       </form>
 
       <h1 v-if="status === 'success'">
@@ -54,7 +57,6 @@
       <p v-if="status === 'error'">
         Prova nuovamente o scrivi a info@scaligeravaleggiorugby.com
       </p>
-
     </div>
   </section>
 </template>

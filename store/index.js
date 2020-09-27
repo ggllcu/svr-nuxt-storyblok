@@ -16,6 +16,9 @@ export const mutations = {
   },
   setCacheVersion (state, version) {
     state.cacheVersion = version
+  },
+  setMainSponsors (state, mainSponsors) {
+    state.mainSponsors = mainSponsors
   }
 }
 
@@ -25,6 +28,13 @@ export const actions = {
       version: context.version
     }).then((res) => {
       commit('setSettings', res.data.story.content)
+    })
+  },
+  loadMainSponsors ({ commit }, context) {
+    return this.$storyapi.get(`cdn/stories/${context.language}/settings`, {
+      version: context.version
+    }).then((res) => {
+      commit('setMainSponsors', res.data.story.content)
     })
   }
 }
