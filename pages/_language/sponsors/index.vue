@@ -28,15 +28,11 @@
         </nuxt-link>
       </div>
     </div>
-    <MainSponsor />
   </section>
 </template>
 
 <script>
 export default {
-  components: {
-    MainSponsor: () => import('@/components/Sponsors/MainSponsor')
-  },
   asyncData (context) {
     const version = context.query._storyblok || context.isDev ? 'draft' : 'published'
 

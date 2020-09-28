@@ -6,6 +6,7 @@
         <nuxt />
       </div>
     </main>
+    <MainSponsor />
     <Form />
     <Footer />
   </div>
@@ -16,7 +17,8 @@ export default {
   components: {
     Header: () => import('@/components/Header.vue'),
     Footer: () => import('@/components/Footer.vue'),
-    Form: () => import('@/components/Form.vue')
+    Form: () => import('@/components/Form.vue'),
+    MainSponsor: () => import('@/components/Sponsors/MainSponsor')
   }
 }
 </script>

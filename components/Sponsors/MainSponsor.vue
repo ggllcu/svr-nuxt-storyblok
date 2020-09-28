@@ -1,11 +1,22 @@
 <template>
   <section>
-    <h1 class="title is-2">
-      Main Sponsor
-    </h1>
-    <div class="columns is-multiline">
-      <div v-for="post in $store.state.mainSponsors" :key="post.content._uid" class="column is-one-third">
-        <nuxt-link :to="'/' + post.full_slug">
+    <div class="container">
+      <h1 class="title is-2">
+        Con il sostegno di:
+      </h1>
+      <div class="columns">
+        <div v-for="post in $store.state.mainSponsors" :key="post.content._uid" class="column">
+          <nuxt-link :to="'/' + post.full_slug">
+            <section class="hero">
+              <div class="hero-body">
+                <div class="container">
+                  <h2 class="title">
+                    {{ post.content.name }}
+                  </h2>
+                </div>
+              </div>
+            </section>
+          </nuxt-link>
           <div class="card">
             <div class="card-image">
               <figure class="image is-4by3" :style="`background-image: url(${post.content.image})`" />
@@ -25,7 +36,7 @@
               </div>
             </div>
           </div>
-        </nuxt-link>
+        </div>
       </div>
     </div>
   </section>
