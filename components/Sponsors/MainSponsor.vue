@@ -4,7 +4,7 @@
       Main Sponsor
     </h1>
     <div class="columns is-multiline">
-      <div v-for="post in data.stories" :key="post.content._uid" class="column is-one-third">
+      <div v-for="post in $store.state.mainSponsors" :key="post.content._uid" class="column is-one-third">
         <nuxt-link :to="'/' + post.full_slug">
           <div class="card">
             <div class="card-image">
@@ -33,24 +33,6 @@
 
 <script>
 export default {
-  asyncData (context) {
-    const version = context.query._storyblok || context.isDev ? 'draft' : 'published'
-
-    return context.app.$storyapi.get('cdn/stories', {
-      version,
-      starts_with: `${context.store.state.language}/sponsors`,
-      // cv: context.store.state.cacheVersion,
-      filter_query: {
-        categories: {
-          in_array: '4349dbde-514f-4d7d-93dd-8c9d053f2cc3'
-        }
-      }
-    }).then((res) => {
-      return res
-    }).catch((res) => {
-      context.error({ statusCode: res.response.status, message: res.response.data })
-    })
-  },
   data () {
     return { total: 0, data: { stories: [] } }
   }

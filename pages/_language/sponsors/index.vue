@@ -1,7 +1,7 @@
 <template>
   <section>
     <h1 class="title is-2">
-      Main Sponsor
+      Sponsors
     </h1>
     <div class="columns is-multiline">
       <div v-for="post in data.stories" :key="post.content._uid" class="column is-one-third">
@@ -43,13 +43,11 @@ export default {
     return context.app.$storyapi.get('cdn/stories', {
       version,
       starts_with: `${context.store.state.language}/sponsors`,
-      // cv: context.store.state.cacheVersion,
-      filter_query: {
-        categories: {
-          in_array: '4349dbde-514f-4d7d-93dd-8c9d053f2cc3'
-        }
+      categories: {
+        in_array: '4349dbde-514f-4d7d-93dd-8c9d053f2cc3'
       }
     }).then((res) => {
+      console.log('res: ', res)
       return res
     }).catch((res) => {
       context.error({ statusCode: res.response.status, message: res.response.data })

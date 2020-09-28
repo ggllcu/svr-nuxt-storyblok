@@ -4,7 +4,7 @@ export const state = () => ({
   settings: {
     main_navi: []
   },
-  mainSponsors: {}
+  mainSponsors: []
 })
 
 export const mutations = {
@@ -31,10 +31,18 @@ export const actions = {
     })
   },
   loadMainSponsors ({ commit }, context) {
-    return this.$storyapi.get(`cdn/stories/${context.language}/settings`, {
-      version: context.version
+    return this.$storyapi.get('cdn/stories', {
+      version: context.version,
+      starts_with: `${context.language}/sponsors`,
+      filter_query: {
+        categories: {
+          in_array: '4349dbde-514f-4d7d-93dd-8c9d053f2cc3'
+        }
+      }
     }).then((res) => {
-      commit('setMainSponsors', res.data.story.content)
+      commit('setMainSponsors', res.data.stories)
+    }).catch((res) => {
+      context.error({ statusCode: res.response.status, message: res.response.data })
     })
   }
 }

@@ -98,7 +98,9 @@ export default {
     }
   },
   router: {
-    middleware: 'languageDetection'
+    middleware: ['languageDetection','getMainSponsors']
+    // middleware: 'getMainSponsors'
+    // middleware: 'languageDetection'
   },
   generate: {
     routes: function (callback) {
