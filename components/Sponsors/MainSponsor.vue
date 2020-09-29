@@ -17,11 +17,13 @@
 
 <style scoped lang="scss">
 .main-sponsor {
+  margin: 1.25rem;
+  padding: 1.25rem;
   figure {
-      background-position: center;
-      background-size: contain;
-      background-repeat: no-repeat;
-    }
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
 }
 </style>
 

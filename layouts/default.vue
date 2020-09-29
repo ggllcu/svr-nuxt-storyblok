@@ -24,7 +24,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.main {
-  padding:  1.25rem;
+.container {
+  margin-bottom: 100px;
 }
 </style>

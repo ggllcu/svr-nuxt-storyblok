@@ -28,6 +28,7 @@ $link-focus-border: $primary;
 
 // Disable the fullhd breakpoint
 $fullhd-enabled: false;
+$widescreen-enabled: false;
 
 // Import Bulma and Buefy styles
 @import "~bulma";
@@ -43,6 +44,10 @@ header {
 
 .main {
   background: #fff;
+}
+
+article img {
+  width: 100%;
 }
 
 // Transitions

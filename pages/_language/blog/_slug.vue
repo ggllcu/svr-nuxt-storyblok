@@ -1,25 +1,44 @@
 <template>
   <section>
     <div v-editable="story.content">
-      <h1 class="title is-2">
-        {{ story.content.name }}
-      </h1>
-      <time>
-        <p class="has-text-dark">
-          {{ new Date(story.published_at).getDate() }}/
-          {{ new Date(story.published_at).getMonth() + 1 }}/
-          {{ new Date(story.published_at).getFullYear() }}
-        </p>
-      </time>
-      <figure>
-        <img :src="story.content.image">
-      </figure>
-      <div>
-        {{ body }}
-      </div>
+      <article>
+        <figure>
+          <img :src="story.content.image">
+        </figure>
+        <main>
+          <div class="article-content">
+            <h1 class="title is-2">
+              {{ story.content.name }}
+            </h1>
+            <time>
+              <p class="has-text-dark">
+                {{ new Date(story.published_at).getDate() }}/
+                {{ new Date(story.published_at).getMonth() + 1 }}/
+                {{ new Date(story.published_at).getFullYear() }}
+              </p>
+            </time>
+            <div>
+              {{ body }}
+            </div>
+          </div>
+        </main>
+      </article>
     </div>
   </section>
 </template>
+
+<style lang="scss" scoped>
+main {
+  position: relative;
+  margin: 1.25rem;
+  padding: 1.25rem;
+  margin-top: -100px;
+  background-color: #fff;
+}
+time p {
+  margin-bottom: 1.5rem;
+}
+</style>
 
 <script>
 import marked from 'marked'
@@ -66,9 +85,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-time p {
-  margin-bottom: 1.5rem;
-}
-</style>
