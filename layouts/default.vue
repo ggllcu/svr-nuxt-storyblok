@@ -5,8 +5,8 @@
       <div class="container">
         <nuxt />
       </div>
+      <MainSponsor />
     </main>
-    <MainSponsor />
     <Form />
     <Footer />
   </div>
