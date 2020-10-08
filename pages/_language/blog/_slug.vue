@@ -7,9 +7,7 @@
         </figure>
         <main>
           <div class="article-content">
-            <h1 class="title is-2">
-              {{ story.content.name }}
-            </h1>
+            <Title :title="story.content.name" />
             <time>
               <p class="has-text-dark">
                 {{ new Date(story.published_at).getDate() }}/
@@ -44,6 +42,9 @@ time p {
 import marked from 'marked'
 
 export default {
+  components: {
+    Title: () => import('@/components/Detail/Title.vue')
+  },
   asyncData (context) {
     // Load the JSON from the API
     const version = context.query._storyblok || context.isDev ? 'draft' : 'published'

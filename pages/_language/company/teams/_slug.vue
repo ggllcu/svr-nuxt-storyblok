@@ -1,9 +1,6 @@
 <template>
   <section>
     <div v-editable="story.content">
-      <h1 class="title is-2">
-        {{ story.content.name }}
-      </h1>
       <figure>
         <img :src="story.content.image">
       </figure>

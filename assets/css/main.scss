@@ -30,6 +30,12 @@ $link-focus-border: $primary;
 $fullhd-enabled: false;
 $widescreen-enabled: false;
 
+// Override Variables
+$card-content-padding: 1rem;
+
+// Disable materialDesignShittyIcons
+$materialDesignIcons: false;
+
 // Import Bulma and Buefy styles
 @import "~bulma";
 @import "~buefy/src/scss/buefy";
@@ -43,6 +49,7 @@ header {
 }
 
 .main {
+  padding: 1rem;
   background: #fff;
 }
 
