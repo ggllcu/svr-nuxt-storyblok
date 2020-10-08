@@ -32,6 +32,10 @@ export default {
   css: [
     '~/assets/css/main.scss'
   ],
+  buefy: {
+    materialDesignIcons: false,
+    materialDesignIconsHRef: '/'
+  },
   /*
   ** Plugins to load before mounting the App
   ** https://nuxtjs.org/guide/plugins
