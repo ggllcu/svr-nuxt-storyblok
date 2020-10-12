@@ -13,16 +13,9 @@
                   <h2 class="title is-5">
                     {{ post.content.name }}
                   </h2>
-                  <time>
-                    <p class="has-text-dark">
-                      {{ new Date(post.published_at).getDate() }}/
-                      {{ new Date(post.published_at).getMonth() + 1 }}/
-                      {{ new Date(post.published_at).getFullYear() }}
-                    </p>
-                  </time>
+                  <Date :date="post.published_at" />
                 </div>
               </div>
-
               <div class="content">
                 {{ post.content.intro }}
                 <br>
@@ -37,6 +30,9 @@
 
 <script>
 export default {
+  components: {
+    Date: () => import('@/components/Detail/Date.vue')
+  },
   asyncData (context) {
     const version = context.query._storyblok || context.isDev ? 'draft' : 'published'
 

@@ -2,22 +2,12 @@
   <section>
     <div v-editable="story.content">
       <article>
-        <figure>
-          <img :src="story.content.image">
-        </figure>
+        <Figure :image="story.content.image" />
         <main>
           <div class="article-content">
             <Title :title="story.content.name" />
-            <time>
-              <p class="has-text-dark">
-                {{ new Date(story.published_at).getDate() }}/
-                {{ new Date(story.published_at).getMonth() + 1 }}/
-                {{ new Date(story.published_at).getFullYear() }}
-              </p>
-            </time>
-            <div>
-              {{ body }}
-            </div>
+            <Date :date="story.published_at" />
+            <div v-html="body"/>
           </div>
         </main>
       </article>
@@ -43,7 +33,9 @@ import marked from 'marked'
 
 export default {
   components: {
-    Title: () => import('@/components/Detail/Title.vue')
+    Title: () => import('@/components/Detail/Title.vue'),
+    Figure: () => import('@/components/Detail/Figure.vue'),
+    Date: () => import('@/components/Detail/Date.vue')
   },
   asyncData (context) {
     // Load the JSON from the API
