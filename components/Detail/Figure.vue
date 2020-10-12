@@ -1,5 +1,5 @@
 <template>
-  <figure>
+  <figure class="image is-4by3">
     <img :src="image">
   </figure>
 </template>
