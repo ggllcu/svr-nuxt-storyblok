@@ -1,20 +1,40 @@
 <template>
   <section>
     <div v-editable="story.content">
-      <figure>
-        <img :src="story.content.image">
-      </figure>
-      <div>
-        {{ body }}
-      </div>
+      <article>
+        <Figure :image="story.content.image" />
+        <main>
+          <div class="article-content">
+            <Title :title="story.content.name" />
+            <div v-html="body"/>
+          </div>
+        </main>
+      </article>
     </div>
   </section>
 </template>
+
+<style lang="scss" scoped>
+main {
+  position: relative;
+  margin: 1.25rem;
+  padding: 1.25rem;
+  margin-top: -100px;
+  background-color: #fff;
+}
+time p {
+  margin-bottom: 1.5rem;
+}
+</style>
 
 <script>
 import marked from 'marked'
 
 export default {
+  components: {
+    Title: () => import('@/components/Detail/Title.vue'),
+    Figure: () => import('@/components/Detail/Figure.vue')
+  },
   asyncData (context) {
     // Load the JSON from the API
     const version = context.query._storyblok || context.isDev ? 'draft' : 'published'
@@ -56,6 +76,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-</style>

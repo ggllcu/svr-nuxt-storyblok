@@ -4,10 +4,10 @@
       <h2 class="title is-3 content has-text-centered ">
         Con il sostegno di:
       </h2>
-      <div class="columns">
-        <div v-for="post in $store.state.mainSponsors" :key="post.content._uid" class="column">
+      <div class="columns is-centered">
+        <div v-for="post in $store.state.mainSponsors" :key="post.content._uid" class="column is-4">
           <a :href="post.content.website.url">
-            <figure class="image is-3by2" :style="`background-image: url(${post.content.image})`" />
+            <figure class="image is-3by2" :style="`background-image: url(${post.content.logo})`" />
           </a>
         </div>
       </div>

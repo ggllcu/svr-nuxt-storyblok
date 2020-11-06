@@ -1,21 +1,19 @@
 <template>
   <section>
+    <h1 class="title is-2">
+      Notizie
+    </h1>
     <div class="row columns is-multiline">
-      <div v-for="post in data.stories" :key="post.content._uid" class="column is-one-third is-half-tablet">
+      <div v-for="post in data.stories" :key="post.content._uid" class="column is-one-third">
         <nuxt-link :to="'/' + post.full_slug">
           <div class="card">
-            <div class="card-image">
-              <figure class="image is-4by3" :style="`background-image: url(${ transformImage(post.content.image, '368x276') })`" />
-            </div>
+            <Figure :image="post.content.image" />
             <div class="card-content">
-              <div class="media">
-                <div class="media-content">
-                  <h2 class="title is-5">
-                    {{ post.content.name }}
-                  </h2>
-                </div>
+              <div class="content">
+                <h2 class="title is-5">
+                  {{ post.content.name }}
+                </h2>
               </div>
-
               <div class="content">
                 {{ post.content.intro }}
                 <br>
@@ -59,7 +57,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 figure.image {
   background: no-repeat center ;
   background-size: cover;

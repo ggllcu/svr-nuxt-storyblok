@@ -6,6 +6,12 @@
   </time>
 </template>
 
+<style lang="scss" scoped>
+time p {
+  margin-bottom: 1.5rem;
+}
+</style>
+
 <script>
 export default {
   props: {

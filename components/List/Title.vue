@@ -1,13 +1,13 @@
 <template>
-  <figure class="image is-2by1">
-    <img :src="image">
-  </figure>
+  <h1 class="title is-2">
+    {{ title }}
+  </h1>
 </template>
 
 <script>
 export default {
   props: {
-    image: {
+    title: {
       type: String,
       required: true,
       default: null
@@ -15,6 +15,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-</style>

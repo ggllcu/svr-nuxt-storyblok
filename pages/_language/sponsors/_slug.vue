@@ -1,30 +1,45 @@
 <template>
   <section>
     <div v-editable="story.content">
-      <h1 class="title is-2">
-        {{ story.content.name }}
-      </h1>
-      <figure>
-        <img :src="story.content.image">
-      </figure>
-      <div>
-        {{ body }}
-      </div>
-      <hr>
-      <h2 class="title is-5">
-        Siamo a sostegno perché:
-      </h2>
-      <div>
-        {{ reason }}
-      </div>
+      <article>
+        <Figure :image="story.content.image" />
+        <main>
+          <div class="article-content">
+            <Title :title="story.content.name" />
+            <div v-html="body"/>
+            <hr>
+            <h2 class="title is-4">
+              Siamo a sostegno perché:
+            </h2>
+            <div v-html="reason"/>
+          </div>
+        </main>
+      </article>
     </div>
   </section>
 </template>
+
+<style lang="scss" scoped>
+main {
+  position: relative;
+  margin: 1.25rem;
+  padding: 1.25rem;
+  margin-top: -100px;
+  background-color: #fff;
+}
+time p {
+  margin-bottom: 1.5rem;
+}
+</style>
 
 <script>
 import marked from 'marked'
 
 export default {
+  components: {
+    Title: () => import('@/components/Detail/Title.vue'),
+    Figure: () => import('@/components/Detail/Figure.vue')
+  },
   asyncData (context) {
     // Load the JSON from the API
     const version = context.query._storyblok || context.isDev ? 'draft' : 'published'
@@ -40,7 +55,12 @@ export default {
   },
   data () {
     return {
-      story: { content: { body: '', reason: '' } }
+      story: {
+        content: {
+          body: '',
+          reason: ''
+        }
+      }
     }
   },
   computed: {
@@ -69,6 +89,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-</style>
