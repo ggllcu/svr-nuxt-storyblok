@@ -24,9 +24,14 @@
             Struttura
           </b-navbar-item>
         </b-navbar-dropdown>
-        <b-navbar-item tag="nuxt-link" :to="{ path: '/it/sponsors' }">
-          Sponsor
-        </b-navbar-item>
+        <b-navbar-dropdown label="Sponsor">
+          <b-navbar-item tag="nuxt-link" :to="{ path: '/it/sponsor/sponsors' }">
+            Elenco
+          </b-navbar-item>
+          <b-navbar-item tag="nuxt-link" :to="{ path: '/it/sponsor/support' }">
+            Sostienici
+          </b-navbar-item>
+        </b-navbar-dropdown>
         <b-navbar-item tag="nuxt-link" :to="{ path: '/it/blog' }">
           News
         </b-navbar-item>

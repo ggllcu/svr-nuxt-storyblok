@@ -36,7 +36,7 @@ export default {
 
     return context.app.$storyapi.get('cdn/stories', {
       version,
-      starts_with: `${context.store.state.language}/sponsors`,
+      starts_with: `${context.store.state.language}/sponsor/sponsors`,
       categories: {
         in_array: '4349dbde-514f-4d7d-93dd-8c9d053f2cc3'
       }

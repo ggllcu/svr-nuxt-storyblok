@@ -44,7 +44,7 @@ export default {
     // Load the JSON from the API
     const version = context.query._storyblok || context.isDev ? 'draft' : 'published'
 
-    return context.app.$storyapi.get(`cdn/stories/${context.params.language}/sponsors/${context.params.slug}`, {
+    return context.app.$storyapi.get(`cdn/stories/${context.params.language}/sponsor/sponsors/${context.params.slug}`, {
       version,
       cv: context.store.state.cacheVersion
     }).then((res) => {
