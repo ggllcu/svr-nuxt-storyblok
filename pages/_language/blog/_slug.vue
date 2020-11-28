@@ -7,7 +7,8 @@
           <div class="article-content">
             <Title :title="story.content.name" />
             <Date :date="story.published_at" />
-            <div v-html="body"/>
+            <!-- eslint-disable-next-line vue/no-v-html -->
+            <div v-html="body" />
           </div>
         </main>
       </article>

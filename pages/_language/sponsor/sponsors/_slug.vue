@@ -6,12 +6,14 @@
         <main>
           <div class="article-content">
             <Title :title="story.content.name" />
-            <div v-html="body"/>
+            <!-- eslint-disable-next-line vue/no-v-html -->
+            <div v-html="body" />
             <hr>
             <h2 class="title is-4">
               Siamo a sostegno perché:
             </h2>
-            <div v-html="reason"/>
+            <!-- eslint-disable-next-line vue/no-v-html -->
+            <div v-html="reason" />
           </div>
         </main>
       </article>
