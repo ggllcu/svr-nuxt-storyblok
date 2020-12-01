@@ -39,7 +39,7 @@ import marked from 'marked'
 
 export default {
   components: {
-    Title: () => import('@/components/Detail/Title.vue'),
+    Title: () => import('@/components/Commons/AppTitle.vue'),
     Figure: () => import('@/components/Detail/Figure.vue')
   },
   asyncData (context) {
