@@ -113,10 +113,11 @@ export default {
       let cacheVersion = 0
 
       let toIgnore = [
-        'home',
-        'it/settings',
+        '/home',
+        '/it/settings',
         '/it/company',
-        '/it/home'
+        '/it/home',
+        '/it/sponsor'
       ]
 
       // other routes that are not in Storyblok with their slug.
@@ -135,6 +136,8 @@ export default {
               routes.push('/' + res.data.links[key].slug)
             }
           })
+
+          routes = routes.filter(route => route.includes('category'));
 
           callback(null, routes)
         })
