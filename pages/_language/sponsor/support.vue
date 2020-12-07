@@ -11,6 +11,7 @@ export default {
       story: { content: {} }
     }
   },
+
   mounted () {
     // use the bridge to listen to events
     this.$storybridge.on(['input', 'published', 'change'], (event) => {

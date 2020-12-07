@@ -34,7 +34,7 @@ import marked from 'marked'
 
 export default {
   components: {
-    Title: () => import('@/components/Commons/AppTitle.vue'),
+    Title: () => import('@/components/Common/AppTitle.vue'),
     Figure: () => import('@/components/Detail/Figure.vue'),
     Date: () => import('@/components/Detail/Date.vue')
   },
