@@ -61,4 +61,7 @@ nav {
     padding: 0;
   }
 }
+.navbar-menu, .navbar-burger {
+  display: none !important;
+}
 </style>

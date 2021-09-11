@@ -3,4 +3,3 @@
     Test component
   </div>
 </template>
-
