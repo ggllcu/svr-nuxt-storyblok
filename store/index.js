@@ -1,9 +1,6 @@
 export const state = () => ({
   cacheVersion: '',
   language: 'it',
-  settings: {
-    main_navi: []
-  },
   mainSponsors: []
 })
 
@@ -23,13 +20,6 @@ export const mutations = {
 }
 
 export const actions = {
-  loadSettings ({ commit }, context) {
-    return this.$storyapi.get(`cdn/stories/${context.language}/settings`, {
-      version: context.version
-    }).then((res) => {
-      commit('setSettings', res.data.story.content)
-    })
-  },
   loadMainSponsors ({ commit }, context) {
     return this.$storyapi.get('cdn/stories', {
       version: context.version,

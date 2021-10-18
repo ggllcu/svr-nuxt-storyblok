@@ -1,7 +1,7 @@
 <template>
   <header>
     <b-navbar class="is-primary container">
-      <template slot="brand">
+      <template #brand>
         <b-navbar-item tag="nuxt-link" :to="'/'">
           <img
             :src="'//a.storyblok.com/f/91547/309x458/25f06f46c6/logo_scaligera_valeggio_rugby.png' | transformImage('0x104')"
@@ -60,8 +60,5 @@ nav {
   .navbar-item {
     padding: 0;
   }
-}
-.navbar-menu, .navbar-burger {
-  display: none !important;
 }
 </style>

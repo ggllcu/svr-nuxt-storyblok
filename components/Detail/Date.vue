@@ -23,8 +23,9 @@ export default {
   },
   computed: {
     niceDate () {
+      // console.log('this.date', this.date)
       const dateObj = new Date(this.date)
-      const day = dateObj.getDay()
+      const day = dateObj.getDate()
       const month = dateObj.toLocaleString('it-IT', { month: 'long' }).replace(/^\w/, c => c.toUpperCase())
       const year = dateObj.getFullYear()
       return day + ' ' + month + ' ' + year

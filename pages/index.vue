@@ -1,6 +1,11 @@
 <template>
   <section>
-    <component :is="story.content.component" v-if="story.content.component" :key="story.content._uid" :blok="story.content" />
+    <component
+      :is="story.content.component"
+      v-if="story.content.component"
+      :key="story.content._uid"
+      :blok="story.content"
+    />
   </section>
 </template>
 
@@ -11,6 +16,7 @@ export default {
     return context.app.$storyapi.get('cdn/stories/it/home', {
       version: 'draft'
     }).then((res) => {
+      console.log('res.data', res.data)
       return res.data
     }).catch((res) => {
       if (!res.response) {
@@ -33,7 +39,6 @@ export default {
           this.story.content = event.story.content
         }
       } else {
-        // window.location.reload()
         this.$nuxt.$router.go({
           path: this.$nuxt.$router.currentRoute,
           force: true

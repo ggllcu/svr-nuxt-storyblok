@@ -7,13 +7,14 @@
       <div v-for="post in data.stories" :key="post.content._uid" class="column is-one-third">
         <nuxt-link :to="'/' + post.full_slug">
           <div class="card">
-            <Figure :image="post.content.image" />
+            <FigureCover :image="post.content.image" />
             <div class="card-content">
               <div class="content">
                 <h2 class="title is-5">
-                  {{ post.content.name }}
+                  {{ post.content.title }}
                 </h2>
-                <Date :date="post.published_at" />
+                <Date v-if="post.content.date" :date="post.content.date" />
+                <Date v-else :date="post.created_at" />
               </div>
               <div class="content">
                 {{ post.content.intro }}
@@ -30,7 +31,8 @@
 <script>
 export default {
   components: {
-    Date: () => import('@/components/Detail/Date.vue')
+    Date: () => import('@/components/Detail/Date.vue'),
+    FigureCover: () => import('@/components/List/Figure_Cover.vue')
   },
   asyncData (context) {
     const version = context.query._storyblok || context.isDev ? 'draft' : 'published'
@@ -40,6 +42,7 @@ export default {
       starts_with: `${context.store.state.language}/blog`,
       cv: context.store.state.cacheVersion
     }).then((res) => {
+      console.log('res', res.data.stories)
       return res
     }).catch((res) => {
       context.error({ statusCode: res.response.status, message: res.response.data })

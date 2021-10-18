@@ -5,8 +5,9 @@
         <Figure :image="story.content.image" />
         <main>
           <div class="article-content">
-            <Title :title="story.content.name" />
-            <Date :date="story.published_at" />
+            <Title :title="story.content.title" />
+            <Date v-if="story.content.date" :date="story.content.date" />
+            <Date v-else :date="story.created_at" />
             <!-- eslint-disable-next-line vue/no-v-html -->
             <div v-html="body" />
           </div>
