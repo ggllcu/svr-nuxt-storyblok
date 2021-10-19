@@ -1,7 +1,7 @@
 <template>
   <section>
     <h1 class="title is-2">
-      Notizie
+      Squadre
     </h1>
     <div class="row columns is-multiline">
       <div v-for="post in data.stories" :key="post.content._uid" class="column is-one-third">
@@ -11,7 +11,7 @@
             <div class="card-content">
               <div class="content">
                 <h2 class="title is-5">
-                  {{ post.content.name }}
+                  {{ post.content.title }}
                 </h2>
               </div>
               <div class="content">

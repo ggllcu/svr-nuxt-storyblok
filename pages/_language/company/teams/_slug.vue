@@ -5,7 +5,7 @@
         <Figure :image="story.content.image" />
         <main>
           <div class="article-content">
-            <Title :title="story.content.name" />
+            <Title :title="story.content.title" />
             <!-- eslint-disable-next-line vue/no-v-html -->
             <div v-html="body" />
           </div>
