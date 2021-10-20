@@ -16,7 +16,6 @@ export default {
     return context.app.$storyapi.get('cdn/stories/it/home', {
       version: 'draft'
     }).then((res) => {
-      console.log('res.data', res.data)
       return res.data
     }).catch((res) => {
       if (!res.response) {
