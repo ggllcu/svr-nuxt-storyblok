@@ -11,7 +11,7 @@ export default {
   ** See https://nuxtjs.org/api/configuration-target
   */
   target: process.env.TARGET,
-  ssr: process.env.SSR
+  ssr: process.env.SSR,
 
   /*
   ** Headers of the page
