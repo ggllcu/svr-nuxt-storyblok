@@ -42,7 +42,6 @@ export default {
       starts_with: `${context.store.state.language}/blog`,
       cv: context.store.state.cacheVersion
     }).then((res) => {
-      console.log('res', res.data.stories)
       return res
     }).catch((res) => {
       context.error({ statusCode: res.response.status, message: res.response.data })
