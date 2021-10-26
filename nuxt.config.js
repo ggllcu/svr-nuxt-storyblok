@@ -10,8 +10,10 @@ export default {
   ** Nuxt target
   ** See https://nuxtjs.org/api/configuration-target
   */
-  target: process.env.TARGET,
-  ssr: process.env.SSR,
+  // target: process.env.TARGET,
+  target: 'static',
+  // ssr: process.env.SSR === 'false' ? false : true,
+  ssr: true,
 
   /*
   ** Headers of the page

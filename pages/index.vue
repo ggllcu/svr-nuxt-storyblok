@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="test">
     <component
       :is="story.content.component"
       v-if="story.content.component"
