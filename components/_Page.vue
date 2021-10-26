@@ -1,12 +1,14 @@
 <template>
   <div
     v-editable="blok"
-    class="px-6">
-    <component
+    class="px-6"
+  >
+    Scaligera Valeggio Rugby
+    <!-- <component
       v-for="blok in blok.body"
       :key="blok._uid"
       :blok="blok"
-      :is="blok.component" />
+      :is="blok.component" /> -->
   </div>
 </template>
 

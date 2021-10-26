@@ -13,7 +13,7 @@ export default {
   // target: process.env.TARGET,
   target: 'static',
   // ssr: process.env.SSR === 'false' ? false : true,
-  ssr: false,
+  ssr: true,
 
   /*
   ** Headers of the page
