@@ -1,13 +1,11 @@
-// Import Bulma's core
+// Import Bulma and Buefy styles
 @import "~bulma/sass/utilities/_all";
 
 // Set your colors
 $primary: #2b3f74;
 $primary-invert: findColorInvert($primary);
-$twitter: #4099FF;
-$twitter-invert: findColorInvert($twitter);
 
-// Setup $colors to use as bulma classes (e.g. 'is-twitter')
+// Setup $colors to use as bulma classes 
 $colors: (
   "white": ($white, $black),
   "black": ($black, $white),
@@ -18,7 +16,6 @@ $colors: (
   "success": ($success, $success-invert),
   "warning": ($warning, $warning-invert),
   "danger": ($danger, $danger-invert),
-  "twitter": ($twitter, $twitter-invert)
 );
 
 // Links
@@ -36,8 +33,9 @@ $card-content-padding: 1rem;
 // Disable materialDesignShittyIcons
 $materialDesignIcons: false;
 
-// Import Bulma and Buefy styles
-@import "~bulma";
+
+
+@import "~bulma/bulma";
 @import "~buefy/src/scss/buefy";
 
 .body {
@@ -51,10 +49,6 @@ header {
 .main {
   padding: 1rem;
   background: #fff;
-}
-
-article img {
-  width: 100%;
 }
 
 h2 {

@@ -3,7 +3,7 @@
     <Header />
     <main id="main" role="main" class="main default">
       <div class="container">
-        <nuxt />
+        <Nuxt />
       </div>
     </main>
     <MainSponsor />
