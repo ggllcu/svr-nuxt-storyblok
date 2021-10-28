@@ -1,6 +1,6 @@
 import Vue from 'vue'
 
 // Content Components
-import Page from '~/components/_Page.vue'
+import Page from '~/components/Page.vue'
 
-Vue.component('blok--page', Page)
+Vue.component('blok-page', Page)
