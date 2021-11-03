@@ -1,10 +1,11 @@
 <template>
-  <section class="test">
+  <section class="home">
+    <!-- Component for page content -->
     <component
-      :is="story.content.component"
-      v-if="story.content.component"
-      :key="story.content._uid"
-      :blok="story.content"
+      :is="blok.component | dashify"
+      v-for="blok in story.content.body"
+      :key="blok._uid"
+      :blok="blok"
     />
   </section>
 </template>
@@ -16,6 +17,7 @@ export default {
     return context.app.$storyapi.get('cdn/stories/it/home', {
       version: 'draft'
     }).then((res) => {
+      // console.log('res.data', res.data)
       return res.data
     }).catch((res) => {
       if (!res.response) {

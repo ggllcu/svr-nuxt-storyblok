@@ -33,8 +33,8 @@ import marked from 'marked'
 
 export default {
   components: {
-    Title: () => import('@/components/Common/AppTitle.vue'),
-    Figure: () => import('@/components/Detail/Figure.vue')
+    Title: () => import('@/components/content/_Title.vue'),
+    Figure: () => import('@/components/detail/Figure.vue')
   },
   asyncData (context) {
     // Load the JSON from the API

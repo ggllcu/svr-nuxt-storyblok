@@ -23,9 +23,12 @@ $link: $primary;
 $link-invert: $primary-invert;
 $link-focus-border: $primary;
 
-// Disable the fullhd breakpoint
-$fullhd-enabled: false;
+// Disable the desktop breakpoint
+$desktop-enabled: false;
+// Disable the widescreen breakpoint
 $widescreen-enabled: false;
+// // Disable the fullhd breakpoint
+$fullhd-enabled: false;
 
 // Override Variables
 $card-content-padding: 1rem;
@@ -37,6 +40,7 @@ $materialDesignIcons: false;
 
 @import "~bulma/bulma";
 @import "~buefy/src/scss/buefy";
+@import '~bulma-timeline';
 
 .body {
   background: $primary;

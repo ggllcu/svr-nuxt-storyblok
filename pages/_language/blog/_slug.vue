@@ -64,9 +64,9 @@ export default {
   layout: 'detail',
 
   components: {
-    // Title: () => import('@/components/Common/AppTitle.vue'),
-    // Figure: () => import('@/components/Detail/Figure.vue'),
-    Date: () => import('@/components/Detail/Date.vue')
+    // Title: () => import('@/components/content/_Title.vue'),
+    // Figure: () => import('@/components/detail/Figure.vue'),
+    Date: () => import('@/components/detail/Date.vue')
   },
 
   asyncData (context) {

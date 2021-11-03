@@ -3,12 +3,7 @@
     v-editable="blok"
     class="px-6"
   >
-    Scaligera Valeggio Rugby
-    <!-- <component
-      v-for="blok in blok.body"
-      :key="blok._uid"
-      :blok="blok"
-      :is="blok.component" /> -->
+    XXX
   </div>
 </template>
 

@@ -31,7 +31,7 @@
 <script>
 export default {
   components: {
-    Date: () => import('@/components/Detail/Date.vue'),
+    Date: () => import('@/components/detail/Date.vue'),
     FigureCover: () => import('@/components/List/Figure_Cover.vue')
   },
   asyncData (context) {
