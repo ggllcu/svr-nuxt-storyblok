@@ -1,13 +1,16 @@
 <template>
   <section>
-    <h1 class="title is-2">
-      Squadre
-    </h1>
+    <PageHeader
+      title="Squadre"
+    />
     <div class="row columns is-multiline">
       <div v-for="post in data.stories" :key="post.content._uid" class="column is-one-third">
         <nuxt-link :to="'/' + post.full_slug">
           <div class="card">
-            <FigureCover :image="post.content.image" />
+            <FigureCover
+              :key="post._uid"
+              :image="post.content.image.filename"
+            />
             <div class="card-content">
               <div class="content">
                 <h2 class="title is-5">

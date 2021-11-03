@@ -14,6 +14,7 @@ import Button from '~/components/content/_Button.vue'
 import Image from '~/components/content/_Image.vue'
 import Carousel from '~/components/content/_Carousel.vue'
 import CustomHtml from '~/components/content/_Custom_Html.vue'
+import Counter from '~/components/content/_Counter.vue'
 
 Vue.component('blok-page', Page)
 
@@ -26,3 +27,4 @@ Vue.component('blok--button', Button)
 Vue.component('blok--image', Image)
 Vue.component('blok--carousel', Carousel)
 Vue.component('blok--custom-html', CustomHtml)
+Vue.component('blok--counter', Counter)

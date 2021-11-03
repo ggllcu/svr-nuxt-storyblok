@@ -47,6 +47,7 @@ export default {
   plugins: [
     '~/plugins/filters.js',
     '~/plugins/components.js'
+    // '~/plugins/vue-number-animation.js'
   ],
   /*
   ** Auto import components
@@ -65,7 +66,7 @@ export default {
   */
   modules: [
     // Doc: https://buefy.github.io/#/documentation
-    'nuxt-buefy',
+    ['nuxt-buefy', { css: false, materialDesignIcons: false }],
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',

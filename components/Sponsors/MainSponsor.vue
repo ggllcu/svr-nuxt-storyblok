@@ -7,7 +7,7 @@
       <div class="columns is-centered">
         <div v-for="post in $store.state.mainSponsors" :key="post.content._uid" class="column is-4">
           <a :href="post.content.website.url">
-            <figure class="image is-3by2" :style="`background-image: url(${post.content.logo})`" />
+            <figure class="image is-3by2" :style="`background-image: url(${post.content.logo.filename})`" />
           </a>
         </div>
       </div>

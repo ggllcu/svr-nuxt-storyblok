@@ -7,7 +7,7 @@
       <div v-for="post in data.stories" :key="post.content._uid" class="column is-one-third">
         <nuxt-link :to="'/' + post.full_slug">
           <div class="card">
-            <FigureCover :image="post.content.image" />
+            <FigureCover :image="post.content.image.filename" />
             <div class="card-content">
               <div class="content">
                 <h2 class="title is-5">

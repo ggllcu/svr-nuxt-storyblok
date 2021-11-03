@@ -1,7 +1,10 @@
 <template>
   <div class="card-image">
     <!-- <figure class="image is-3by2" :style="`background-image: url('${ transformImage(image, '368x276') }')`" /> -->
-    <figure class="image is-3by2" :style="`background-image: url('${ transformImage(image, 'fit-in/368x276/filters:fill(transparent)') }')`" />
+    <figure
+      class="image is-3by2"
+      :style="`background-image: url('${ transformImage(image, 'fit-in/304x203') }')`"
+    />
   </div>
 </template>
 

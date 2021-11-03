@@ -1,5 +1,10 @@
 <template>
-  <section class="home">
+  <section class="about">
+    <PageHeader
+      :title="story.content.title"
+      :subtitle="story.content.subtitle"
+      :background-image="story.content.image.filename"
+    />
     <!-- Component for page content -->
     <component
       :is="blok.component | dashify"
@@ -12,6 +17,9 @@
 
 <script>
 export default {
+  components: {
+    PageHeader: () => import('@/components/PageHeader.vue')
+  },
   asyncData (context) {
     // Load the JSON from the API
     const version =

@@ -2,21 +2,11 @@
   <section>
     <div v-editable="story.content">
       <article class="article">
-        <header
-          class="hero is-bold has-text-centered is-medium is-primary"
-          :style="{
-            'background-image': `url(${story.content.image})`,
-          }"
-        >
-          <div class="hero-body">
-            <h1 class="title is-2 mb-0 pb-2">
-              {{ story.content.title }}
-            </h1>
-            <h2 class="title is-3 pt-0">
-              {{ story.content.subtitle }}
-            </h2>
-          </div>
-        </header>
+        <PageHeader
+          :title="story.content.title"
+          :subtitle="story.content.subtitle"
+          :background-image="story.content.image.filename"
+        />
         <!-- <Figure :image="story.content.image" /> -->
         <div class="article-content">
           <!-- <Title :title="story.content.title" /> -->
@@ -34,27 +24,6 @@
 time p {
   margin-bottom: 1.5rem;
 }
-.hero {
-  margin: -0.75rem;
-
-  @media screen and (min-width: 769px) {
-    margin: -0.75rem;
-  }
-
-  margin-bottom: 0;
-  background-position: center;
-  background-size: cover;
-
-  .hero-body {
-    padding-left: 0;
-    padding-right: 0;
-
-    .title {
-      background-color: #000000b0;
-      padding: 0.75rem 0;
-    }
-  }
-}
 </style>
 
 <script>
@@ -64,8 +33,7 @@ export default {
   layout: 'detail',
 
   components: {
-    // Title: () => import('@/components/content/_Title.vue'),
-    // Figure: () => import('@/components/detail/Figure.vue'),
+    PageHeader: () => import('@/components/PageHeader.vue'),
     Date: () => import('@/components/detail/Date.vue')
   },
 

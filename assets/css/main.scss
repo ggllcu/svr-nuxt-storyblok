@@ -1,5 +1,4 @@
-// Import Bulma and Buefy styles
-@import "~bulma/sass/utilities/_all";
+@import "~bulma/sass/utilities/_all.sass";
 
 // Set your colors
 $primary: #2b3f74;
@@ -37,6 +36,7 @@ $card-content-padding: 1rem;
 $materialDesignIcons: false;
 
 
+// @import "~bulma/sass/elements/button.sass"
 
 @import "~bulma/bulma";
 @import "~buefy/src/scss/buefy";
@@ -59,19 +59,3 @@ h2 {
   @extend .is-2;
 }
 
-// Transitions
-/*
-.page-enter-active,
-.page-leave-active {
-  z-index: 1;
-  transition: all 0.5s;
-}
-.page-enter {
-  z-index: 1;
-  transform: translate(100%, 0);
-}
-.page-leave-to {
-  z-index: 1;
-  transform: translate(100%, 0);
-}
-*/

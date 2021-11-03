@@ -1,28 +1,23 @@
 <template>
   <section>
     <div v-editable="story.content">
-      <article>
-        <Figure :image="story.content.image" />
-        <main>
-          <div class="article-content">
-            <Title :title="story.content.title" />
-            <!-- eslint-disable-next-line vue/no-v-html -->
-            <div v-html="body" />
-          </div>
-        </main>
+      <article class="article">
+        <PageHeader
+          :title="story.content.title"
+          :subtitle="story.content.subtitle"
+          :background-image="story.content.image.filename"
+        />
+        <!-- <Figure :image="story.content.image" /> -->
+        <div class="article-content">
+          <!-- eslint-disable-next-line vue/no-v-html -->
+          <div v-html="body" />
+        </div>
       </article>
     </div>
   </section>
 </template>
 
 <style lang="scss" scoped>
-main {
-  position: relative;
-  margin: 1.25rem;
-  padding: 1.25rem;
-  margin-top: -100px;
-  background-color: #fff;
-}
 time p {
   margin-bottom: 1.5rem;
 }
@@ -32,10 +27,12 @@ time p {
 import marked from 'marked'
 
 export default {
+  layout: 'detail',
+
   components: {
-    Title: () => import('@/components/content/_Title.vue'),
-    Figure: () => import('@/components/detail/Figure.vue')
+    PageHeader: () => import('@/components/PageHeader.vue')
   },
+
   asyncData (context) {
     // Load the JSON from the API
     const version = context.query._storyblok || context.isDev ? 'draft' : 'published'
@@ -44,6 +41,7 @@ export default {
       version,
       cv: context.store.state.cacheVersion
     }).then((res) => {
+      // console.log('res.data', res.data)
       return res.data
     }).catch((res) => {
       context.error({ statusCode: res.response.status, message: res.response.data })
@@ -74,6 +72,31 @@ export default {
         })
       }
     })
+  },
+  methods: {
+    transformImage (image, option) {
+      if (!image) {
+        return ''
+      }
+      if (!option) {
+        return ''
+      }
+
+      const imageService = 'https://img2.storyblok.com/'
+      const path = image.replace('https://a.storyblok.com/', '')
+      return imageService + option + path
+    },
+    storyHasCarousel (story) {
+      if (typeof story.content.carousel === 'undefined') {
+        return false
+      }
+
+      if (Object.keys(story.content.carousel).length === 0) {
+        return false
+      }
+
+      return true
+    }
   }
 }
 </script>
