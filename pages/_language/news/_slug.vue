@@ -9,6 +9,9 @@
         />
         <!-- <Figure :image="story.content.image" /> -->
         <div class="article-content">
+          <!-- <Title :title="story.content.title" /> -->
+          <Date v-if="story.content.date" :date="story.content.date" />
+          <Date v-else :date="story.created_at" />
           <!-- eslint-disable-next-line vue/no-v-html -->
           <div v-html="body" />
         </div>
@@ -30,14 +33,15 @@ export default {
   layout: 'detail',
 
   components: {
-    PageHeader: () => import('@/components/PageHeader.vue')
+    PageHeader: () => import('@/components/PageHeader.vue'),
+    Date: () => import('@/components/detail/Date.vue')
   },
 
   asyncData (context) {
     // Load the JSON from the API
     const version = context.query._storyblok || context.isDev ? 'draft' : 'published'
 
-    return context.app.$storyapi.get(`cdn/stories/${context.params.language}/company/teams/${context.params.slug}`, {
+    return context.app.$storyapi.get(`cdn/stories/${context.params.language}/news/${context.params.slug}`, {
       version,
       cv: context.store.state.cacheVersion
     }).then((res) => {

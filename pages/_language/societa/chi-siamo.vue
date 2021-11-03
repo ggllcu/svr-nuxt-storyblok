@@ -1,5 +1,5 @@
 <template>
-  <section class="support">
+  <section class="about">
     <PageHeader
       :title="story.content.title"
       :subtitle="story.content.subtitle"
@@ -26,7 +26,7 @@ export default {
       context.query._storyblok || context.isDev ? 'draft' : 'published'
 
     return context.app.$storyapi
-      .get(`cdn/stories/${context.params.language}/sponsor/support`, {
+      .get(`cdn/stories/${context.params.language}/societa/chi-siamo`, {
         version
       })
       .then((res) => {

@@ -11,16 +11,16 @@
       </template>
       <template slot="end">
         <b-navbar-dropdown label="Società">
-          <b-navbar-item tag="nuxt-link" :to="{ path: '/it/company/about' }">
+          <b-navbar-item tag="nuxt-link" :to="{ path: '/it/societa/chi-siamo' }">
             Scaligera Valeggio Rugby
           </b-navbar-item>
-          <b-navbar-item tag="nuxt-link" :to="{ path: '/it/company/organigram' }">
+          <b-navbar-item tag="nuxt-link" :to="{ path: '/it/societa/organigramma' }">
             Organigramma
           </b-navbar-item>
-          <b-navbar-item tag="nuxt-link" :to="{ path: '/it/company/teams' }">
+          <b-navbar-item tag="nuxt-link" :to="{ path: '/it/societa/squadre' }">
             Squadre
           </b-navbar-item>
-          <b-navbar-item tag="nuxt-link" :to="{ path: '/it/company/structure' }">
+          <b-navbar-item tag="nuxt-link" :to="{ path: '/it/societa/struttura' }">
             Struttura
           </b-navbar-item>
         </b-navbar-dropdown>
@@ -28,11 +28,11 @@
           <b-navbar-item tag="nuxt-link" :to="{ path: '/it/sponsor/sponsors' }">
             Elenco
           </b-navbar-item>
-          <b-navbar-item tag="nuxt-link" :to="{ path: '/it/sponsor/support' }">
+          <b-navbar-item tag="nuxt-link" :to="{ path: '/it/sponsor/sostienici' }">
             Sostienici
           </b-navbar-item>
         </b-navbar-dropdown>
-        <b-navbar-item tag="nuxt-link" :to="{ path: '/it/blog' }">
+        <b-navbar-item tag="nuxt-link" :to="{ path: '/it/news' }">
           News
         </b-navbar-item>
         <b-navbar-item tag="nuxt-link" :to="{ path: '/#contact' }">

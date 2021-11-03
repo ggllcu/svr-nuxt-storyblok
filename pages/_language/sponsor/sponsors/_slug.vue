@@ -2,20 +2,21 @@
   <section>
     <div v-editable="story.content">
       <article>
-        <Figure :image="story.content.image" />
-        <main>
-          <div class="article-content">
-            <Title :title="story.content.name" />
-            <!-- eslint-disable-next-line vue/no-v-html -->
-            <div v-html="body" />
-            <hr>
-            <h2 class="title is-4">
-              Siamo a sostegno perché:
-            </h2>
-            <!-- eslint-disable-next-line vue/no-v-html -->
-            <div v-html="reason" />
-          </div>
-        </main>
+        <PageHeader
+          :title="story.content.title"
+          :subtitle="story.content.subtitle"
+          :background-image="story.content.image.filename"
+        />
+        <div class="article-content">
+          <!-- eslint-disable-next-line vue/no-v-html -->
+          <div v-html="body" />
+          <hr>
+          <h2 class="title is-4">
+            Siamo a sostegno perché:
+          </h2>
+          <!-- eslint-disable-next-line vue/no-v-html -->
+          <div v-html="reason" />
+        </div>
       </article>
     </div>
   </section>
@@ -39,8 +40,7 @@ import marked from 'marked'
 
 export default {
   components: {
-    Title: () => import('@/components/content/_Title.vue'),
-    Figure: () => import('@/components/detail/Figure.vue')
+    PageHeader: () => import('@/components/PageHeader.vue')
   },
   asyncData (context) {
     // Load the JSON from the API

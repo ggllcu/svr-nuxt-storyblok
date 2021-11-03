@@ -103,7 +103,7 @@ export default {
       let toIgnore = [
         '/home',
         '/it/settings',
-        '/it/company',
+        '/it/societa',
         '/it/home',
         '/it/sponsor'
       ]

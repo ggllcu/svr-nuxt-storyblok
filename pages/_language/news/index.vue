@@ -1,10 +1,10 @@
 <template>
   <section>
-    <h1 class="title is-2">
-      Notizie
-    </h1>
+    <PageHeader
+      title="Notizie"
+    />
     <div class="row columns is-multiline">
-      <div v-for="post in data.stories" :key="post.content._uid" class="column is-one-third">
+      <div v-for="post in data.stories" :key="post._uid" class="column is-one-third">
         <nuxt-link :to="'/' + post.full_slug">
           <div class="card">
             <FigureCover :image="post.content.image.filename" />
@@ -39,7 +39,7 @@ export default {
 
     return context.app.$storyapi.get('cdn/stories', {
       version,
-      starts_with: `${context.store.state.language}/blog`,
+      starts_with: `${context.store.state.language}/news`,
       cv: context.store.state.cacheVersion
     }).then((res) => {
       return res

@@ -39,7 +39,7 @@ export default {
 
     return context.app.$storyapi.get('cdn/stories', {
       version,
-      starts_with: `${context.store.state.language}/company/teams`,
+      starts_with: `${context.store.state.language}/societa/squadre`,
       cv: context.store.state.cacheVersion
     }).then((res) => {
       return res

@@ -1,5 +1,5 @@
 <template>
-  <section class="structure">
+  <section class="organigram">
     <PageHeader
       :title="story.content.title"
       :subtitle="story.content.subtitle"
@@ -26,7 +26,7 @@ export default {
       context.query._storyblok || context.isDev ? 'draft' : 'published'
 
     return context.app.$storyapi
-      .get(`cdn/stories/${context.params.language}/company/structure`, {
+      .get(`cdn/stories/${context.params.language}/societa/organigramma`, {
         version
       })
       .then((res) => {
