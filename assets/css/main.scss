@@ -55,7 +55,4 @@ header {
   background: #fff;
 }
 
-h2 {
-  @extend .is-2;
-}
-
+@import "./partials/home.scss"

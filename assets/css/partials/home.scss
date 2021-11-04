@@ -1,0 +1,45 @@
+.header {
+    .hero {
+        .hero-body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        h2.title {
+            font-size: 8vw;
+            font-family: 'Poppins';
+            color: $primary;
+            -webkit-text-stroke: 0.2vw white;
+            text-transform: uppercase;
+            position: relative;
+            box-sizing: border-box;
+            line-height: 1.2em;
+            letter-spacing: 0.05em;
+        }
+
+        h2.title::before {
+            // box-sizing: border-box;
+            text-align: left;
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            color: white;
+            -webkit-text-stroke: 0px white;
+            border-right: 2px solid white;
+            overflow: hidden;
+            animation: animate 5s linear infinite;
+        }
+    }
+}
+
+@keyframes animate {
+    0%, 10%, 100% {
+        width: 0;
+    }
+    70%, 90% {
+        width: 100%;
+    }
+}

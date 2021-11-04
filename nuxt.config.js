@@ -57,9 +57,17 @@ export default {
   /*
   ** Nuxt.js dev-modules
   */
+
+  googleFonts: {
+    families: {
+      'Source+Code+Pro': true,
+      'Poppins': true
+    }
+  },
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
+    '@nuxtjs/google-fonts'
   ],
   /*
   ** Nuxt.js modules
@@ -134,3 +142,4 @@ export default {
   },
   loading: false
 }
+
