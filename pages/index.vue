@@ -1,7 +1,10 @@
 <template>
   <div>
     <section class="header">
-      <b-carousel :autoplay="false">
+      <b-carousel
+        :autoplay="true"
+        :interval="3500"
+      >
         <b-carousel-item v-for="(carousel, i) in carousels" :key="i">
           <section :class="`hero is-medium is-${carousel.color}`">
             <div class="hero-body has-text-centered">

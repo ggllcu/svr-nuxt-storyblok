@@ -24,22 +24,21 @@
             position: absolute;
             top: 0;
             left: 0;
-            width: 50%;
+            width: 0%;
             height: 100%;
             color: white;
             -webkit-text-stroke: 0px white;
             border-right: 2px solid white;
-            overflow: hidden;
-            animation: animate 5s linear infinite;
+            overflow-x: hidden;
+            overflow-y: hidden;
+            animation: animate 3s linear forwards;
+            white-space: nowrap;
         }
     }
 }
 
 @keyframes animate {
-    0%, 10%, 100% {
-        width: 0;
-    }
-    70%, 90% {
-        width: 100%;
+    to {
+        width: 102%;
     }
 }
