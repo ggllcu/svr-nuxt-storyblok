@@ -3,11 +3,11 @@
     <section class="header">
       <b-carousel
         :autoplay="true"
-        :interval="3500"
+        :interval="3200"
       >
         <b-carousel-item v-for="(carousel, i) in carousels" :key="i">
           <section
-            :class="'hero is-medium'"
+            class="hero is-medium"
             :style="`background-image: url('${carousel.background}')`"
           >
             <div class="hero-body has-text-centered">
@@ -31,7 +31,7 @@
         </div>
       </div>
     </section>
-    <section class="content">
+    <section class="section-content">
       <div class="container">
         <!-- Component for page content -->
         <component
@@ -40,6 +40,76 @@
           :key="blok._uid"
           :blok="blok"
         />
+      </div>
+      <div class="container has-background-primary">
+        <div class="columns">
+          <div class="column">
+            <div class="card">
+              <div class="card-image">
+                <figure class="image is-3by2">
+                  <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="content">
+                  Acquista il materiale e il merchandising della Scaligera Valeggio Rugby
+                </div>
+                <b-button
+                  tag="a"
+                  href="#"
+                  type="is-primary"
+                  expanded
+                >
+                  Scopri di più
+                </b-button>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="card">
+              <div class="card-image">
+                <figure class="image is-3by2">
+                  <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="content">
+                  Acquista il materiale e il merchandising della Scaligera Valeggio Rugby
+                </div>
+                <b-button
+                  tag="a"
+                  href="#"
+                  type="is-primary"
+                  expanded
+                >
+                  Scopri di più
+                </b-button>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="card">
+              <div class="card-image">
+                <figure class="image is-3by2">
+                  <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="content">
+                  Acquista il materiale e il merchandising della Scaligera Valeggio Rugby
+                </div>
+                <b-button
+                  tag="a"
+                  href="#"
+                  type="is-primary"
+                  expanded
+                >
+                  Scopri di più
+                </b-button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </div>
