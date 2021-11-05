@@ -61,7 +61,6 @@ export default {
   googleFonts: {
     families: {
       'Source+Code+Pro': true,
-      'Poppins': true
     }
   },
   buildModules: [

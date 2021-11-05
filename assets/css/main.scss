@@ -4,6 +4,9 @@
 $primary: #2b3f74;
 $primary-invert: findColorInvert($primary);
 
+$secondary: #018abe;
+$secondary-invert: findColorInvert($secondary);
+
 // Setup $colors to use as bulma classes 
 $colors: (
   "white": ($white, $black),
