@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <aside class="row">
     <div class="container main-sponsor">
       <h2 class="title is-3 content has-text-centered ">
         Con il sostegno di:
@@ -12,7 +12,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </aside>
 </template>
 
 <style scoped lang="scss">

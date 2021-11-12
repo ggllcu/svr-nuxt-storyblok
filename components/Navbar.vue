@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <div class="has-background-primary">
     <b-navbar class="is-primary container">
       <template #brand>
         <b-navbar-item tag="nuxt-link" :to="'/'">
@@ -40,7 +40,7 @@
         </b-navbar-item>
       </template>
     </b-navbar>
-  </header>
+  </div>
 </template>
 
 <script>

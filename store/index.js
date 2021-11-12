@@ -16,6 +16,9 @@ export const mutations = {
   },
   setMainSponsors (state, mainSponsors) {
     state.mainSponsors = mainSponsors
+  },
+  setLatestPosts (state, latestPosts) {
+    state.latestPosts = latestPosts
   }
 }
 
@@ -32,6 +35,19 @@ export const actions = {
     }).then((res) => {
       // console.log(res.data)
       commit('setMainSponsors', res.data.stories)
+    }).catch((res) => {
+      context.error({ statusCode: res.response.status, message: res.response.data })
+    })
+  },
+  loadLatestPosts ({ commit }, context) {
+    return this.$storyapi.get('cdn/stories', {
+      version: context.version,
+      starts_with: `${context.language}/news`,
+      page: 1,
+      per_page: 3
+    }).then((res) => {
+      // console.log('posts', res.data)
+      commit('setLatestPosts', res.data.stories)
     }).catch((res) => {
       context.error({ statusCode: res.response.status, message: res.response.data })
     })

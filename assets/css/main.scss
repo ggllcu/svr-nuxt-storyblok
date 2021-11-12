@@ -50,12 +50,15 @@ $materialDesignIcons: false;
 }
 
 header {
+  position: relative;
   z-index: 10;
 }
-
-.main {
-  padding: 1rem;
-  background: #fff;
+ 
+.row {
+  // margin-top: 1rem;
+  // margin-bottom: 1rem;
+padding: 2rem 1rem;
 }
+
 
 @import "./partials/home.scss"

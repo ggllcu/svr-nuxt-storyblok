@@ -31,8 +31,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.card-image {
+  margin: 1rem;
+}
 figure.image {
   background: no-repeat center ;
-  background-size: cover;
+  background-size: contain;
 }
 </style>

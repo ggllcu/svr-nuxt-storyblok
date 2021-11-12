@@ -7,7 +7,7 @@
           :subtitle="story.content.subtitle"
           :background-image="story.content.image.filename"
         />
-        <div class="article-content">
+        <div class="article-content container">
           <!-- eslint-disable-next-line vue/no-v-html -->
           <div v-html="body" />
           <hr>

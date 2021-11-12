@@ -1,5 +1,5 @@
 <template>
-  <section class="structure">
+  <div class="structure">
     <PageHeader
       :title="story.content.title"
       :subtitle="story.content.subtitle"
@@ -12,7 +12,7 @@
       :key="blok._uid"
       :blok="blok"
     />
-  </section>
+  </div>
 </template>
 
 <script>

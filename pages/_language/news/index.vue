@@ -1,31 +1,33 @@
 <template>
-  <section>
+  <div>
     <PageHeader
       title="Notizie"
     />
-    <div class="row columns is-multiline">
-      <div v-for="post in data.stories" :key="post._uid" class="column is-one-third">
-        <nuxt-link :to="'/' + post.full_slug">
-          <div class="card">
-            <FigureCover :image="post.content.image.filename" />
-            <div class="card-content">
-              <div class="content">
-                <h2 class="title is-5">
-                  {{ post.content.title }}
-                </h2>
-                <Date v-if="post.content.date" :date="post.content.date" />
-                <Date v-else :date="post.created_at" />
-              </div>
-              <div class="content">
-                {{ post.content.intro }}
-                <br>
+    <main class="container">
+      <div class="row columns is-multiline">
+        <div v-for="post in data.stories" :key="post._uid" class="column is-one-third">
+          <nuxt-link :to="'/' + post.full_slug">
+            <div class="card">
+              <FigureCover :image="post.content.image.filename" />
+              <div class="card-content">
+                <div class="content">
+                  <h2 class="title is-5">
+                    {{ post.content.title }}
+                  </h2>
+                  <Date v-if="post.content.date" :date="post.content.date" />
+                  <Date v-else :date="post.created_at" />
+                </div>
+                <div class="content">
+                  {{ post.content.intro }}
+                  <br>
+                </div>
               </div>
             </div>
-          </div>
-        </nuxt-link>
+          </nuxt-link>
+        </div>
       </div>
-    </div>
-  </section>
+    </main>
+  </div>
 </template>
 
 <script>

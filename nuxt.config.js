@@ -97,9 +97,7 @@ export default {
   build: {
   },
   router: {
-    middleware: ['languageDetection','getMainSponsors']
-    // middleware: 'getMainSponsors'
-    // middleware: 'languageDetection'
+    middleware: ['languageDetection','getMainSponsors','getLatestPosts']
   },
   generate: {
     routes: function (callback) {

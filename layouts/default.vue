@@ -1,10 +1,8 @@
 <template>
   <div>
-    <Header />
+    <Navbar />
     <main id="main" role="main" class="main default">
-      <div class="container">
-        <Nuxt />
-      </div>
+      <Nuxt />
     </main>
     <MainSponsor />
     <Form />
@@ -15,7 +13,7 @@
 <script>
 export default {
   components: {
-    Header: () => import('@/components/Header.vue'),
+    Navbar: () => import('@/components/Navbar.vue'),
     Footer: () => import('@/components/Footer.vue'),
     Form: () => import('@/components/Form.vue'),
     MainSponsor: () => import('@/components/Sponsors/MainSponsor')

@@ -1,10 +1,9 @@
 <template>
   <div>
-    <Header />
-    <main id="main" role="main" class="main detail">
-      <div class="container">
-        <Nuxt />
-      </div>
+    <Navbar />
+    <main id="main" role="main" class="main home">
+      <HomeHeader />
+      <Nuxt />
     </main>
     <MainSponsor />
     <Form />
@@ -15,16 +14,14 @@
 <script>
 export default {
   components: {
-    Header: () => import('@/components/Header.vue'),
+    Navbar: () => import('@/components/Navbar.vue'),
     Footer: () => import('@/components/Footer.vue'),
     Form: () => import('@/components/Form.vue'),
-    MainSponsor: () => import('@/components/Sponsors/MainSponsor')
+    MainSponsor: () => import('@/components/Sponsors/MainSponsor'),
+    HomeHeader: () => import('@/components/HomeHeader')
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.container {
-  margin-bottom: 100px;
-}
 </style>

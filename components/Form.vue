@@ -1,5 +1,5 @@
 <template>
-  <section id="contact" class="section has-background-primary">
+  <section id="contact" class="row has-background-primary">
     <div class="container">
       <h2 v-if="!status" class="title is-3 content has-text-centered has-text-white">
         Contattaci

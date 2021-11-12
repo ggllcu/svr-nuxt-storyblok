@@ -1,80 +1,82 @@
 <template>
-  <section>
+  <div>
     <PageHeader
       title="I nostri sostenitori"
     />
-    <h2 class="title is-2">
-      Main Sponsors
-    </h2>
-    <div class="row columns is-multiline">
-      <div v-for="post in $store.state.mainSponsors" :key="post.content._uid" class="column is-one-third">
-        <nuxt-link :to="'/' + post.full_slug">
-          <div class="card">
-            <Figure :image="post.content.logo.filename" />
-            <div class="card-content">
-              <div class="content">
-                <h2 class="title is-5">
-                  {{ post.content.name }}
-                </h2>
-              </div>
-              <div class="content">
-                {{ post.content.intro }}
-                <br>
+    <main class="container">
+      <h2 class="title is-2">
+        Main Sponsors
+      </h2>
+      <div class="row columns is-multiline">
+        <div v-for="post in $store.state.mainSponsors" :key="post.content._uid" class="column is-one-third">
+          <nuxt-link :to="'/' + post.full_slug">
+            <div class="card">
+              <Figure :image="post.content.logo.filename" />
+              <div class="card-content">
+                <div class="content">
+                  <h2 class="title is-5">
+                    {{ post.content.name }}
+                  </h2>
+                </div>
+                <div class="content">
+                  {{ post.content.intro }}
+                  <br>
+                </div>
               </div>
             </div>
-          </div>
-        </nuxt-link>
+          </nuxt-link>
+        </div>
       </div>
-    </div>
 
-    <h2 class="title is-2">
-      Sponsors
-    </h2>
-    <div class="row columns is-multiline">
-      <div v-for="post in data.stories" :key="post.content._uid" class="column is-one-third">
-        <nuxt-link :to="'/' + post.full_slug">
-          <div class="card">
-            <Figure :image="post.content.logo.filename" />
-            <div class="card-content">
-              <div class="content">
-                <h2 class="title is-5">
-                  {{ post.content.name }}
-                </h2>
-              </div>
-              <div class="content">
-                {{ post.content.intro }}
-                <br>
+      <h2 class="title is-2">
+        Sponsors
+      </h2>
+      <div class="row columns is-multiline">
+        <div v-for="post in data.stories" :key="post.content._uid" class="column is-one-third">
+          <nuxt-link :to="'/' + post.full_slug">
+            <div class="card">
+              <Figure :image="post.content.logo.filename" />
+              <div class="card-content">
+                <div class="content">
+                  <h2 class="title is-5">
+                    {{ post.content.name }}
+                  </h2>
+                </div>
+                <div class="content">
+                  {{ post.content.intro }}
+                  <br>
+                </div>
               </div>
             </div>
-          </div>
-        </nuxt-link>
+          </nuxt-link>
+        </div>
       </div>
-    </div>
 
-    <h2 class="title is-2">
-      Supporters
-    </h2>
-    <div class="row columns is-multiline">
-      <div v-for="post in data.stories" :key="post.content._uid" class="column is-one-third">
-        <nuxt-link :to="'/' + post.full_slug">
-          <div class="card">
-            <Figure :image="post.content.logo.filename" />
-            <div class="card-content">
-              <div class="content">
-                <h2 class="title is-5">
-                  {{ post.content.name }}
-                </h2>
-              </div>
-              <div class="content">
-                {{ post.content.intro }}
-                <br>
+      <h2 class="title is-2">
+        Supporters
+      </h2>
+      <div class="row columns is-multiline">
+        <div v-for="post in data.stories" :key="post.content._uid" class="column is-one-third">
+          <nuxt-link :to="'/' + post.full_slug">
+            <div class="card">
+              <Figure :image="post.content.logo.filename" />
+              <div class="card-content">
+                <div class="content">
+                  <h2 class="title is-5">
+                    {{ post.content.name }}
+                  </h2>
+                </div>
+                <div class="content">
+                  {{ post.content.intro }}
+                  <br>
+                </div>
               </div>
             </div>
-          </div>
-        </nuxt-link>
+          </nuxt-link>
+        </div>
       </div>
-    </div>
-  </section>
+    </main>
+  </div>
 </template>
 
 <script>

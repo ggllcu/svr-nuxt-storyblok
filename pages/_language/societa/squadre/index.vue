@@ -1,9 +1,10 @@
 <template>
-  <section>
+  <div>
     <PageHeader
       title="Squadre"
     />
-    <div class="row columns is-multiline">
+    <main class="container">
+      <div class="row columns is-multiline">
       <div v-for="post in data.stories" :key="post.content._uid" class="column is-one-third">
         <nuxt-link :to="'/' + post.full_slug">
           <div class="card">
@@ -26,7 +27,8 @@
         </nuxt-link>
       </div>
     </div>
-  </section>
+    </main>
+  </div>
 </template>
 
 <script>
