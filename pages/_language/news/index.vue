@@ -44,6 +44,7 @@ export default {
       starts_with: `${context.store.state.language}/news`,
       cv: context.store.state.cacheVersion
     }).then((res) => {
+      console.log('res:', res.data.stories[0].content.image)
       return res
     }).catch((res) => {
       context.error({ statusCode: res.response.status, message: res.response.data })
@@ -51,16 +52,6 @@ export default {
   },
   data () {
     return { total: 0, data: { stories: [] } }
-  },
-  methods: {
-    transformImage (image, option) {
-      if (!image) { return '' }
-      if (!option) { return '' }
-
-      const imageService = '//img2.storyblok.com/'
-      const path = image.replace('//a.storyblok.com', '')
-      return imageService + option + path
-    }
   }
 }
 </script>

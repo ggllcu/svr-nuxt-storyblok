@@ -11,7 +11,7 @@
         <div v-for="post in $store.state.mainSponsors" :key="post.content._uid" class="column is-one-third">
           <nuxt-link :to="'/' + post.full_slug">
             <div class="card">
-              <Figure :image="post.content.logo.filename" />
+              <FigureContain :image="post.content.logo.filename" />
               <div class="card-content">
                 <div class="content">
                   <h2 class="title is-5">
@@ -35,7 +35,7 @@
         <div v-for="post in data.stories" :key="post.content._uid" class="column is-one-third">
           <nuxt-link :to="'/' + post.full_slug">
             <div class="card">
-              <Figure :image="post.content.logo.filename" />
+              <FigureContain :image="post.content.logo.filename" />
               <div class="card-content">
                 <div class="content">
                   <h2 class="title is-5">
@@ -59,7 +59,7 @@
         <div v-for="post in data.stories" :key="post.content._uid" class="column is-one-third">
           <nuxt-link :to="'/' + post.full_slug">
             <div class="card">
-              <Figure :image="post.content.logo.filename" />
+              <FigureContain :image="post.content.logo.filename" />
               <div class="card-content">
                 <div class="content">
                   <h2 class="title is-5">
@@ -82,7 +82,7 @@
 <script>
 export default {
   components: {
-    Figure: () => import('@/components/List/Figure_Contain.vue')
+    FigureContain: () => import('@/components/List/Figure_Contain.vue')
   },
   asyncData (context) {
     const version = context.query._storyblok || context.isDev ? 'draft' : 'published'
