@@ -5,28 +5,28 @@
     />
     <main class="container">
       <div class="row columns is-multiline">
-      <div v-for="post in data.stories" :key="post.content._uid" class="column is-one-third">
-        <nuxt-link :to="'/' + post.full_slug">
-          <div class="card">
-            <FigureCover
-              :key="post._uid"
-              :image="post.content.image.filename"
-            />
-            <div class="card-content">
-              <div class="content">
-                <h2 class="title is-5">
-                  {{ post.content.title }}
-                </h2>
-              </div>
-              <div class="content">
-                {{ post.content.intro }}
-                <br>
+        <div v-for="post in data.stories" :key="post.content._uid" class="column is-one-third">
+          <nuxt-link :to="'/' + post.full_slug">
+            <div class="card">
+              <FigureCover
+                :key="post._uid"
+                :image="post.content.image.filename"
+              />
+              <div class="card-content">
+                <div class="content">
+                  <h2 class="title is-5">
+                    {{ post.content.title }}
+                  </h2>
+                </div>
+                <div class="content">
+                  {{ post.content.intro }}
+                  <br>
+                </div>
               </div>
             </div>
-          </div>
-        </nuxt-link>
+          </nuxt-link>
+        </div>
       </div>
-    </div>
     </main>
   </div>
 </template>

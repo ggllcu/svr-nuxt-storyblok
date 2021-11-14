@@ -44,7 +44,6 @@ export default {
       starts_with: `${context.store.state.language}/news`,
       cv: context.store.state.cacheVersion
     }).then((res) => {
-      console.log('res:', res.data.stories[0].content.image)
       return res
     }).catch((res) => {
       context.error({ statusCode: res.response.status, message: res.response.data })

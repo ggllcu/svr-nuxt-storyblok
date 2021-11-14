@@ -9,22 +9,13 @@
       </h2>
       <div class="row columns is-multiline">
         <div v-for="post in $store.state.mainSponsors" :key="post.content._uid" class="column is-one-third">
-          <nuxt-link :to="'/' + post.full_slug">
-            <div class="card">
-              <FigureContain :image="post.content.logo.filename" />
-              <div class="card-content">
-                <div class="content">
-                  <h2 class="title is-5">
-                    {{ post.content.name }}
-                  </h2>
-                </div>
-                <div class="content">
-                  {{ post.content.intro }}
-                  <br>
-                </div>
-              </div>
-            </div>
-          </nuxt-link>
+          <SponsorCard
+            :url="'/' + post.full_slug"
+            :website="post.content.website.url"
+            :image="post.content.logo.filename"
+            :title="post.content.title"
+            :intro="post.content.intro"
+          />
         </div>
       </div>
 
@@ -32,47 +23,14 @@
         Sponsors
       </h2>
       <div class="row columns is-multiline">
-        <div v-for="post in $store.state.mainSponsors" :key="post.content._uid" class="column is-one-third">
-          <nuxt-link :to="'/' + post.full_slug">
-            <div class="card">
-              <FigureContain :image="post.content.logo.filename" />
-              <div class="card-content">
-                <div class="content">
-                  <h2 class="title is-5">
-                    {{ post.content.name }}
-                  </h2>
-                </div>
-                <div class="content">
-                  {{ post.content.intro }}
-                  <br>
-                </div>
-              </div>
-            </div>
-          </nuxt-link>
-        </div>
-      </div>
-
-      <h2 class="title is-2">
-        Supporters
-      </h2>
-      <div class="row columns is-multiline">
-        <div v-for="post in $store.state.mainSponsors" :key="post.content._uid" class="column is-one-third">
-          <nuxt-link :to="'/' + post.full_slug">
-            <div class="card">
-              <FigureContain :image="post.content.logo.filename" />
-              <div class="card-content">
-                <div class="content">
-                  <h2 class="title is-5">
-                    {{ post.content.name }}
-                  </h2>
-                </div>
-                <div class="content">
-                  {{ post.content.intro }}
-                  <br>
-                </div>
-              </div>
-            </div>
-          </nuxt-link>
+        <div v-for="post in data.stories" :key="post.content._uid" class="column is-one-third">
+          <SponsorCard
+            :url="'/' + post.full_slug"
+            :website="post.content.website.url"
+            :image="post.content.logo.filename"
+            :title="post.content.title"
+            :intro="post.content.intro"
+          />
         </div>
       </div>
     </main>
@@ -82,7 +40,7 @@
 <script>
 export default {
   components: {
-    FigureContain: () => import('@/components/List/Figure_Contain.vue')
+    SponsorCard: () => import('@/components/SponsorCard.vue')
   },
   asyncData (context) {
     const version = context.query._storyblok || context.isDev ? 'draft' : 'published'
@@ -98,23 +56,21 @@ export default {
       }
     })
 
-    const supportersRes = context.app.$storyapi.get('cdn/stories', {
-      version,
-      starts_with: `${context.store.state.language}/sponsor/sponsors`,
-      filter_query: {
-        categories: {
-          in_array: 'fac2de4d-4a95-484a-b390-636f4a36ee29'
-        }
-      }
-    })
-
-    console.log('sponsorsRes:', sponsorsRes)
+    /* const supportersRes = context.app.$storyapi.get('cdn/stories', { */
+    /*   version, */
+    /*   starts_with: `${context.store.state.language}/sponsor/sponsors`, */
+    /*   filter_query: { */
+    /*     categories: { */
+    /*       in_array: 'fac2de4d-4a95-484a-b390-636f4a36ee29' */
+    /*     } */
+    /*   } */
+    /* }) */
 
     /* return { test: sponsorsRes } */
-    return sponsorsRes.then((sponsorsRes) => {
-      return { sponsorsRes, supportersRes }
-    }).catch((sponsorsRes) => {
-      console.log('error:', sponsorsRes)
+    return sponsorsRes.then((res) => {
+      return res
+    }).catch((res) => {
+      context.error({ statusCode: res.response.status, message: res.response.data })
     })
 
     /* console.log('sponsors:', sponsorsRes) */
