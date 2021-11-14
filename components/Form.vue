@@ -11,7 +11,7 @@
             <b-field label="Nome" class="has-text-white">
               <b-input
                 type="text"
-                name="nome expanded"
+                name="nome"
                 placeholder="Il tuo nome"
               />
             </b-field>
@@ -20,7 +20,7 @@
             <b-field label="Email" class="has-text-white">
               <b-input
                 type="email"
-                name="email expanded"
+                name="email"
                 placeholder="La tua email"
                 required
               />
@@ -30,7 +30,7 @@
         <b-field label="Messaggio" class="has-text-white">
           <b-input
             type="textarea"
-            name="messaggio"
+            name="message"
             placeholder="Il tuo messaggio"
             required
           />

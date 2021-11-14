@@ -32,7 +32,7 @@
         Sponsors
       </h2>
       <div class="row columns is-multiline">
-        <div v-for="post in data.stories" :key="post.content._uid" class="column is-one-third">
+        <div v-for="post in $store.state.mainSponsors" :key="post.content._uid" class="column is-one-third">
           <nuxt-link :to="'/' + post.full_slug">
             <div class="card">
               <FigureContain :image="post.content.logo.filename" />
@@ -56,7 +56,7 @@
         Supporters
       </h2>
       <div class="row columns is-multiline">
-        <div v-for="post in data.stories" :key="post.content._uid" class="column is-one-third">
+        <div v-for="post in $store.state.mainSponsors" :key="post.content._uid" class="column is-one-third">
           <nuxt-link :to="'/' + post.full_slug">
             <div class="card">
               <FigureContain :image="post.content.logo.filename" />
@@ -87,7 +87,8 @@ export default {
   asyncData (context) {
     const version = context.query._storyblok || context.isDev ? 'draft' : 'published'
 
-    return context.app.$storyapi.get('cdn/stories', {
+    const sponsorsRes = context.app.$storyapi.get('cdn/stories', {
+    /* return context.app.$storyapi.get('cdn/stories', { */
       version,
       starts_with: `${context.store.state.language}/sponsor/sponsors`,
       filter_query: {
@@ -95,14 +96,39 @@ export default {
           in_array: 'bad5ac0d-4846-48be-b653-6d2cd0df2b88'
         }
       }
-    }).then((res) => {
-      return res
-    }).catch((res) => {
-      context.error({ statusCode: res.response.status, message: res.response.data })
     })
+
+    const supportersRes = context.app.$storyapi.get('cdn/stories', {
+      version,
+      starts_with: `${context.store.state.language}/sponsor/sponsors`,
+      filter_query: {
+        categories: {
+          in_array: 'fac2de4d-4a95-484a-b390-636f4a36ee29'
+        }
+      }
+    })
+
+    console.log('sponsorsRes:', sponsorsRes)
+
+    /* return { test: sponsorsRes } */
+    return sponsorsRes.then((sponsorsRes) => {
+      return { sponsorsRes, supportersRes }
+    }).catch((sponsorsRes) => {
+      console.log('error:', sponsorsRes)
+    })
+
+    /* console.log('sponsors:', sponsorsRes) */
+    /* return { */
+    /*   sponsors: sponsorsRes, */
+    /*   supporters: supportersRes */
+    /* } */
   },
   data () {
-    return { total: 0, data: { stories: [] } }
+    return {
+      total: 0,
+      sponsors: [],
+      supporters: []
+    }
   }
 }
 </script>
