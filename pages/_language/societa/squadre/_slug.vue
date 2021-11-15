@@ -29,8 +29,6 @@ time p {
 import marked from 'marked'
 
 export default {
-  layout: 'detail',
-
   components: {
     PageHeader: () => import('@/components/PageHeader.vue')
   },
