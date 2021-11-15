@@ -3,37 +3,39 @@
     <PageHeader
       title="I nostri sostenitori"
     />
-    <main class="container">
-      <h2 class="title is-2">
-        Main Sponsors
-      </h2>
-      <div class="row columns is-multiline">
-        <div v-for="post in $store.state.mainSponsors" :key="post.content._uid" class="column is-one-third">
-          <SponsorCard
-            :url="'/' + post.full_slug"
-            :website="post.content.website.url"
-            :image="post.content.logo.filename"
-            :title="post.content.title"
-            :intro="post.content.intro"
-          />
+    <section class="row">
+      <main class="container">
+        <h2 class="title is-2">
+          Main Sponsors
+        </h2>
+        <div class="row columns is-multiline">
+          <div v-for="post in $store.state.mainSponsors" :key="post.content._uid" class="column is-one-third">
+            <SponsorCard
+              :url="'/' + post.full_slug"
+              :website="post.content.website.url"
+              :image="post.content.logo.filename"
+              :title="post.content.title"
+              :intro="post.content.intro"
+            />
+          </div>
         </div>
-      </div>
 
-      <h2 class="title is-2">
-        Sponsors
-      </h2>
-      <div class="row columns is-multiline">
-        <div v-for="post in data.stories" :key="post.content._uid" class="column is-one-third">
-          <SponsorCard
-            :url="'/' + post.full_slug"
-            :website="post.content.website.url"
-            :image="post.content.logo.filename"
-            :title="post.content.title"
-            :intro="post.content.intro"
-          />
+        <h2 class="title is-2">
+          Sponsors
+        </h2>
+        <div class="row columns is-multiline">
+          <div v-for="post in data.stories" :key="post.content._uid" class="column is-one-third">
+            <SponsorCard
+              :url="'/' + post.full_slug"
+              :website="post.content.website.url"
+              :image="post.content.logo.filename"
+              :title="post.content.title"
+              :intro="post.content.intro"
+            />
+          </div>
         </div>
-      </div>
-    </main>
+      </main>
+    </section>
   </div>
 </template>
 

@@ -5,13 +5,15 @@
       :subtitle="story.content.subtitle"
       :background-image="story.content.image.filename"
     />
-    <!-- Component for page content -->
-    <component
-      :is="blok.component | dashify"
-      v-for="blok in story.content.body"
-      :key="blok._uid"
-      :blok="blok"
-    />
+    <section class="row">
+      <!-- Component for page content -->
+      <component
+        :is="blok.component | dashify"
+        v-for="blok in story.content.body"
+        :key="blok._uid"
+        :blok="blok"
+      />
+    </section>
   </section>
 </template>
 

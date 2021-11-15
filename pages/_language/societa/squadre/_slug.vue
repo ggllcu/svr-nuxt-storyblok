@@ -8,10 +8,12 @@
           :background-image="story.content.image.filename"
         />
         <!-- <Figure :image="story.content.image" /> -->
-        <div class="article-content container">
-          <!-- eslint-disable-next-line vue/no-v-html -->
-          <div v-html="body" />
-        </div>
+        <section class="row">
+          <div class="article-content container content">
+            <!-- eslint-disable-next-line vue/no-v-html -->
+            <div v-html="body" />
+          </div>
+        </section>
       </article>
     </div>
   </section>
