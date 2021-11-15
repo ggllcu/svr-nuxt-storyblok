@@ -7,16 +7,29 @@
           :subtitle="story.content.subtitle"
           :background-image="story.content.image.filename"
         />
-        <div class="article-content container">
-          <!-- eslint-disable-next-line vue/no-v-html -->
-          <div v-html="body" />
-          <hr>
-          <h2 class="title is-4">
-            Siamo a sostegno perché:
-          </h2>
-          <!-- eslint-disable-next-line vue/no-v-html -->
-          <div v-html="reason" />
-        </div>
+        <section class="row">
+          <div class="article-content container content">
+            <!-- eslint-disable-next-line vue/no-v-html -->
+            <div v-html="body" />
+            <hr>
+            <h2 v-if="reason.length > 0" class="title is-4">
+              Siamo a sostegno perché:
+            </h2>
+            <!-- eslint-disable-next-line vue/no-v-html -->
+            <div v-if="reason.length > 0" v-html="reason" />
+            <hr v-if="reason.length > 0">
+
+            <b-button
+              v-if="story.content.website.url.length > 0"
+              tag="a"
+              type="is-primary"
+              :href="story.content.website.url"
+              target="_blank"
+            >
+              Visita il sito
+            </b-button>
+          </div>
+        </section>
       </article>
     </div>
   </section>

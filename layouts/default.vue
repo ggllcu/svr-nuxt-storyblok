@@ -21,5 +21,8 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+// main.container {
+//   padding: 2rem 1rem;
+// }
 </style>

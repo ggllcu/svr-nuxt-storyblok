@@ -31,7 +31,7 @@ export default {
     backgroundImage: {
       type: String,
       required: false,
-      default: ''
+      default: 'https://a.storyblok.com/f/91547/828x315/48404bb618/placeholder_scaligera_valeggio_rugby.png'
     }
   }
 }
@@ -39,7 +39,7 @@ export default {
 
 <style lang="scss" scoped>
 .hero {
-  margin-bottom: 2rem;
+  // margin-bottom: 2rem;
   background-position: center;
   background-size: cover;
 

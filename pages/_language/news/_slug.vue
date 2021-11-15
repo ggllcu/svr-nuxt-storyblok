@@ -7,14 +7,16 @@
           :subtitle="story.content.subtitle"
           :background-image="story.content.image.filename"
         />
-        <!-- <Figure :image="story.content.image" /> -->
-        <div class="article-content container">
-          <!-- <Title :title="story.content.title" /> -->
-          <Date v-if="story.content.date" :date="story.content.date" />
-          <Date v-else :date="story.created_at" />
-          <!-- eslint-disable-next-line vue/no-v-html -->
-          <div v-html="body" />
-        </div>
+        <section class="row">
+          <!-- <Figure :image="story.content.image" /> -->
+          <div class="article-content container content">
+            <!-- <Title :title="story.content.title" /> -->
+            <Date v-if="story.content.date" :date="story.content.date" />
+            <Date v-else :date="story.created_at" />
+            <!-- eslint-disable-next-line vue/no-v-html -->
+            <div v-html="body" />
+          </div>
+        </section>
       </article>
     </div>
   </section>
