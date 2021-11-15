@@ -3,6 +3,7 @@
     <PageHeader
       title="I nostri sostenitori"
     />
+
     <section class="row">
       <main class="container">
         <h2 class="title is-2">

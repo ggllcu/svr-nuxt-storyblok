@@ -3,6 +3,7 @@
     <PageHeader
       title="Notizie"
     />
+
     <main class="container">
       <div class="row columns is-multiline">
         <div v-for="post in data.stories" :key="post._uid" class="column is-one-third">

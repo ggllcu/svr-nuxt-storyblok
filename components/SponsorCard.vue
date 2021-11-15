@@ -1,40 +1,38 @@
 <template>
-  <div>
-    <div v-if="intro.length > 0 ">
-      <nuxt-link :to="url">
-        <div class="card">
-          <FigureContain :image="image" />
-          <div class="card-content">
-            <div class="content">
-              <h2 class="title is-5">
-                {{ title }}
-              </h2>
-            </div>
-            <div v-if="intro.length > 0" class="content">
-              {{ intro }}
-              <br>
-            </div>
+  <div v-if="intro.length > 0 ">
+    <nuxt-link :to="url">
+      <div class="card">
+        <FigureContain :image="image" />
+        <div class="card-content">
+          <div class="content">
+            <h2 class="title is-5">
+              {{ title }}
+            </h2>
+          </div>
+          <div v-if="intro.length > 0" class="content">
+            {{ intro }}
+            <br>
           </div>
         </div>
-      </nuxt-link>
-    </div>
-    <div v-else>
-      <a :href="website" target="_blank">
-        <div class="card">
-          <FigureContain :image="image" />
-          <div class="card-content">
-            <div class="content">
-              <h2 class="title is-5">
-                {{ title }}
-              </h2>
-            </div>
-            <div v-if="intro.length > 0" class="content">
-              {{ intro }}
-            </div>
+      </div>
+    </nuxt-link>
+  </div>
+  <div v-else>
+    <a :href="website" target="_blank">
+      <div class="card">
+        <FigureContain :image="image" />
+        <div class="card-content">
+          <div class="content">
+            <h2 class="title is-5">
+              {{ title }}
+            </h2>
+          </div>
+          <div v-if="intro.length > 0" class="content">
+            {{ intro }}
           </div>
         </div>
-      </a>
-    </div>
+      </div>
+    </a>
   </div>
 </template>
 
