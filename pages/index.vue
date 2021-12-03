@@ -90,7 +90,7 @@
         </div>
       </div>
     </section>
-    <!-- <section class="row section-content">
+    <section class="row section-content">
       <div class="container">
         <component
           :is="blok.component | dashify"
@@ -99,7 +99,7 @@
           :blok="blok"
         />
       </div>
-    </section> -->
+    </section>
     <section class="row section-latest-posts has-background-primary">
       <div class="container">
         <div class="columns">
