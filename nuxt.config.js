@@ -1,3 +1,5 @@
+import { createSEOMeta } from "./utils/seo";
+
 const axios = require('axios')
 
 export default {
@@ -20,11 +22,17 @@ export default {
   ** See https://nuxtjs.org/api/configuration-head
   */
   head: {
-    title: 'Scaligera Valeggio Rugby',
+    title: 'Scaligera Valeggio Rugby | Squadra in provincia di Verona',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
+      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' },
+      ...createSEOMeta({
+        title: "Scaligera Valeggio Rugby",
+        description: "Scaligera Valeggio Rugby. Società di rugby in provincia di Verona. Per tutti i giocatori nati dopo il 2005",
+        image: "https://a.storyblok.com/f/91547/828x315/48404bb618/placeholder_scaligera_valeggio_rugby.png",
+        url: process.env.HOST_NAME,
+      }),
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -76,6 +84,7 @@ export default {
     ['nuxt-buefy', { css: false, materialDesignIcons: false }],
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    '@nuxtjs/sitemap',
     '@nuxtjs/pwa',
     [
       'storyblok-nuxt',
@@ -97,7 +106,7 @@ export default {
   build: {
   },
   router: {
-    middleware: ['languageDetection','getMainSponsors','getLatestPosts']
+    middleware: ['languageDetection', 'getMainSponsors', 'getLatestPosts']
   },
   generate: {
     routes: function (callback) {
@@ -137,6 +146,10 @@ export default {
       })
     }
   },
-  loading: false
+  loading: false,
+  sitemap: {
+    hostname: process.env.HOST_NAME,
+    gzip: true
+  }
 }
 

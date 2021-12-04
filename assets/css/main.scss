@@ -60,10 +60,12 @@ header {
   padding: 2rem 1rem;
 }
 
-.alternate-columns {
-  section:nth-child(even) {
-    .columns {
-      flex-direction: row-reverse;
+@include tablet {
+  .alternate-columns {
+    section:nth-child(even) {
+      .columns {
+        flex-direction: row-reverse;
+      }
     }
   }
 }
