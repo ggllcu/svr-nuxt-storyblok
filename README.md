@@ -1,4 +1,4 @@
-# svr-nuxt-storyblok
+# Scaligera Valeggio Rugby
 
 ## Build Setup
 
