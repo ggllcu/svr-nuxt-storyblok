@@ -1,7 +1,7 @@
 <template>
   <section class="header">
     <b-carousel
-      :autoplay="false"
+      :autoplay="true"
       :pause-hover="false"
       :interval="3200"
     >

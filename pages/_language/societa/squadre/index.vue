@@ -20,7 +20,7 @@
                   </h2>
                 </div>
                 <div class="content">
-                  {{ post.content.intro }}
+                  {{ post.content.description }}
                   <br>
                 </div>
               </div>

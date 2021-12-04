@@ -90,7 +90,7 @@
         </div>
       </div>
     </section>
-    <section class="row section-content">
+    <section class="row section-content alternate-columns">
       <div class="container">
         <component
           :is="blok.component | dashify"
@@ -125,7 +125,7 @@
                     <Date v-else :date="post.created_at" />
                   </div>
                   <div class="content">
-                    {{ post.content.intro }}
+                    {{ post.content.description }}
                     <br>
                   </div>
                 </div>

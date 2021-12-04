@@ -19,7 +19,7 @@
                   <Date v-else :date="post.created_at" />
                 </div>
                 <div class="content">
-                  {{ post.content.intro }}
+                  {{ post.content.description }}
                   <br>
                 </div>
               </div>
