@@ -26,7 +26,7 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' },
+      // { hid: 'description', name: 'description', content: 'Scaligera Valeggio Rugby. Società di rugby in provincia di Verona. nati dopo il 2005' },
       ...createSEOMeta({
         title: "Scaligera Valeggio Rugby",
         description: "Scaligera Valeggio Rugby. Società di rugby in provincia di Verona. Per tutti i giocatori nati dopo il 2005",

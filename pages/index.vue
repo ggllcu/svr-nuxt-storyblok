@@ -125,7 +125,7 @@
                     <Date v-else :date="post.created_at" />
                   </div>
                   <div class="content">
-                    {{ post.content.description }}
+                    {{ post.content.intro }}
                     <br>
                   </div>
                 </div>
@@ -139,6 +139,8 @@
 </template>
 
 <script>
+import { createSEOMeta } from '~/utils/seo'
+
 export default {
   layout: 'home',
   components: {
@@ -155,6 +157,7 @@ export default {
         version
       })
       .then((res) => {
+        // console.log('res.data.story.content', res.data.story.content)
         return res.data
       })
       .catch((res) => {
@@ -185,6 +188,16 @@ export default {
         })
       }
     })
+  },
+  head () {
+    const url = this.story.slug
+    // eslint-disable-next-line
+    const { title, description, og_image } = this.story.content.metadata
+
+    return {
+      title,
+      meta: createSEOMeta({ title, description, image: og_image, url })
+    }
   }
 }
 </script>
