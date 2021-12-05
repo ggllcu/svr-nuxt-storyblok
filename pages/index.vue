@@ -190,7 +190,7 @@ export default {
     })
   },
   head () {
-    const url = this.story.slug
+    const url = ''
     // eslint-disable-next-line
     const { title, description, og_image } = this.story.content.metadata
 
