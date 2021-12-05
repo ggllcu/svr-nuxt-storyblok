@@ -89,6 +89,7 @@ export default async () => {
       // Doc: https://axios.nuxtjs.org/usage
       '@nuxtjs/axios',
       '@nuxtjs/sitemap',
+      '@nuxtjs/gtm',
       '@nuxtjs/pwa',
       [
         'storyblok-nuxt',
@@ -103,6 +104,9 @@ export default async () => {
     ** See https://axios.nuxtjs.org/options
     */
     axios: {},
+    gtm: {
+      id: 'GTM-NJJ92HN'
+    },
     /*
     ** Build configuration
     ** See https://nuxtjs.org/api/configuration-build/
