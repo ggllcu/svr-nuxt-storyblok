@@ -7,6 +7,7 @@ export const createSEOMeta = data => [
     content: data.description
   },
   { hid: 'og:image', property: 'og:image', content: data.image },
+  { hid: 'fb:app_id', property: 'fb:app_id', content: '966242223397117' },
   {
     hid: 'og:url',
     property: 'og:url',

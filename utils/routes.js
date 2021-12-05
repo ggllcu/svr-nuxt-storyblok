@@ -7,7 +7,7 @@ export const getRoutes = async () => {
 
   let toIgnore = [
     'home',
-    'it/settings',
+    'it/setting',
     'it/societa',
     'it/home',
     'it/sponsor'
