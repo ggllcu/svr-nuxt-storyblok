@@ -104,7 +104,7 @@ export default {
     }
   },
   head () {
-    const url = ''
+    const url = this.story.full_slug
     // eslint-disable-next-line
 
     let title
@@ -121,7 +121,7 @@ export default {
       ogImage = this.story.content.image.filename
     }
 
-    // console.log('this.story.content.image.filename', this.story.content.image.filename)
+    console.log('this.story.full_slug', this.story.full_slug)
 
     return {
       title,

@@ -11,7 +11,7 @@ export const createSEOMeta = data => [
   {
     hid: 'og:url',
     property: 'og:url',
-    content: process.env.HOST_NAME + '/' + data.url
+    content: process.env.HOST_NAME + '/' + data.url + '/'
   },
   {
     hid: 'twitter:card',
