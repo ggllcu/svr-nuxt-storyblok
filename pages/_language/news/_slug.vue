@@ -30,6 +30,7 @@ time p {
 
 <script>
 import marked from 'marked'
+import { createSEOMeta } from '~/utils/seo'
 
 export default {
   components: {
@@ -76,6 +77,29 @@ export default {
         })
       }
     })
+  },
+  head () {
+    const url = ''
+    // eslint-disable-next-line
+
+    let title
+    let description
+    let ogImage
+
+    if (this.story.content.metadata) {
+      title = this.story.content.metadata.title
+      description = this.story.content.metadata.description
+      ogImage = this.story.content.metadata.og_image
+    } else {
+      title = this.story.content.title
+      description = this.story.content.description
+      ogImage = this.story.content.image
+    }
+
+    return {
+      title,
+      meta: createSEOMeta({ title, description, image: ogImage, url })
+    }
   },
   methods: {
     transformImage (image, option) {
