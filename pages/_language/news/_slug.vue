@@ -78,29 +78,6 @@ export default {
       }
     })
   },
-  head () {
-    const url = ''
-    // eslint-disable-next-line
-
-    let title
-    let description
-    let ogImage
-
-    if (this.story.content.metadata) {
-      title = this.story.content.metadata.title
-      description = this.story.content.metadata.description
-      ogImage = this.story.content.metadata.og_image
-    } else {
-      title = this.story.content.title
-      description = this.story.content.description
-      ogImage = this.story.content.image
-    }
-
-    return {
-      title,
-      meta: createSEOMeta({ title, description, image: ogImage, url })
-    }
-  },
   methods: {
     transformImage (image, option) {
       if (!image) {
@@ -124,6 +101,31 @@ export default {
       }
 
       return true
+    }
+  },
+  head () {
+    const url = ''
+    // eslint-disable-next-line
+
+    let title
+    let description
+    let ogImage
+
+    if (this.story.content.metadata) {
+      title = this.story.content.metadata.title
+      description = this.story.content.metadata.description
+      ogImage = this.story.content.metadata.og_image
+    } else {
+      title = this.story.content.title
+      description = this.story.content.description
+      ogImage = this.story.content.image.filename
+    }
+
+    // console.log('this.story.content.image.filename', this.story.content.image.filename)
+
+    return {
+      title,
+      meta: createSEOMeta({ title, description, image: ogImage, url })
     }
   }
 }
