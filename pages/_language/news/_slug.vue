@@ -46,7 +46,7 @@ export default {
       version,
       cv: context.store.state.cacheVersion
     }).then((res) => {
-      // console.log('res.data', res.data)
+      console.log('res.data.story.content', res.data.story.content)
       return res.data
     }).catch((res) => {
       context.error({ statusCode: res.response.status, message: res.response.data })
@@ -120,8 +120,6 @@ export default {
       description = this.story.content.description
       ogImage = this.story.content.image.filename
     }
-
-    console.log('this.story.full_slug', this.story.full_slug)
 
     return {
       title,

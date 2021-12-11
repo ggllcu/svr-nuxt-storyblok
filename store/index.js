@@ -33,7 +33,6 @@ export const actions = {
         }
       }
     }).then((res) => {
-      // console.log(res.data)
       commit('setMainSponsors', res.data.stories)
     }).catch((res) => {
       context.error({ statusCode: res.response.status, message: res.response.data })

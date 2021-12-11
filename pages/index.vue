@@ -157,7 +157,7 @@ export default {
         version
       })
       .then((res) => {
-        // console.log('res.data.story.content', res.data.story.content)
+        // console.log('res.data.story.content.body[0].columns', res.data.story.content.body[0].columns)
         return res.data
       })
       .catch((res) => {
