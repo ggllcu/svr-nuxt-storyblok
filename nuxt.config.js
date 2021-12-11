@@ -159,6 +159,12 @@ export default async () => {
       hostname: process.env.HOST_NAME,
       gzip: true,
       routes: routes
+    },
+    pwa: {
+      manifest: {
+        name: 'Scaligera Valeggio Rugby',
+        lang: 'it',
+      }
     }
   }
 }
