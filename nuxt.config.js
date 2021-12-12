@@ -163,7 +163,9 @@ export default async () => {
     pwa: {
       manifest: {
         name: 'Scaligera Valeggio Rugby',
+        short_name: 'SVR 2015',
         lang: 'it',
+        description: "Scaligera Valeggio Rugby. Società di rugby in provincia di Verona. Per tutti i giocatori nati dopo il 2005"
       }
     }
   }
