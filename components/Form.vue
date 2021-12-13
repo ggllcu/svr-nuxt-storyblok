@@ -7,8 +7,8 @@
 
       <form id="contact" name="contact" method="POST">
         <!-- Start Netlify generated inputs -->
-        <input type='hidden' name='form-name' value='svr_contact' />
-        <input name="bot-field" class="is-hidden" />
+        <input type="hidden" name="form-name" value="svr_contact">
+        <input name="bot-field" class="is-hidden">
         <!-- End Netlify generated inputs -->
         <div class="columns">
           <div class="column">

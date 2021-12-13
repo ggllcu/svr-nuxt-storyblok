@@ -18,6 +18,8 @@
 </template>
 
 <script>
+import { createSEOMeta } from '~/utils/seo'
+
 export default {
   components: {
     PageHeader: () => import('@/components/PageHeader.vue')
@@ -68,6 +70,29 @@ export default {
         })
       }
     })
+  },
+  head () {
+    const url = this.story.full_slug
+    // eslint-disable-next-line
+
+    let title
+    let description
+    let ogImage
+
+    if (this.story.content.metadata.title.length > 0) {
+      title = this.story.content.metadata.title
+      description = this.story.content.metadata.description
+      ogImage = this.story.content.metadata.og_image
+    } else {
+      title = this.story.content.title + ' | Scaligera Valeggio Rugby'
+      description = this.story.content.description
+      ogImage = this.story.content.image.filename
+    }
+
+    return {
+      title,
+      meta: createSEOMeta({ title, description, image: ogImage, url })
+    }
   }
 }
 </script>

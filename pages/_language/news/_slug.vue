@@ -46,7 +46,6 @@ export default {
       version,
       cv: context.store.state.cacheVersion
     }).then((res) => {
-      console.log('res.data.story.content', res.data.story.content)
       return res.data
     }).catch((res) => {
       context.error({ statusCode: res.response.status, message: res.response.data })
