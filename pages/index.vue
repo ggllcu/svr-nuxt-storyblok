@@ -28,7 +28,7 @@
                 </div>
                 <b-button
                   tag="a"
-                  href="/it/societa/struttura"
+                  href="/it/societa/dove-siamo"
                   type="is-primary"
                   expanded
                 >

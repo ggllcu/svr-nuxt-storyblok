@@ -59,7 +59,7 @@
         Qualcosa è andato storto!
       </h1>
       <p v-if="status === 'error'" class="has-text-white">
-        Prova nuovamente o scrivi a info@scaligeravaleggiorugby.com
+        Prova nuovamente o scrivi a info@scaligeravaleggiorugby.it
       </p>
     </div>
   </section>

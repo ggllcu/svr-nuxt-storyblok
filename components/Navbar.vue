@@ -20,8 +20,8 @@
           <b-navbar-item tag="nuxt-link" :to="{ path: '/it/societa/squadre' }">
             Squadre
           </b-navbar-item>
-          <b-navbar-item tag="nuxt-link" :to="{ path: '/it/societa/struttura' }">
-            Struttura
+          <b-navbar-item tag="nuxt-link" :to="{ path: '/it/societa/dove-siamo' }">
+            Dove siamo
           </b-navbar-item>
         </b-navbar-dropdown>
         <b-navbar-dropdown label="Sponsor">
