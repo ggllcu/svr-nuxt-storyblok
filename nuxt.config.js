@@ -17,6 +17,7 @@ export default async () => {
     ** See https://nuxtjs.org/api/configuration-target
     */
     target: process.env.TARGET,
+    ssr: process.env.SSR,
 
     /*
     ** Headers of the page
@@ -114,6 +115,7 @@ export default async () => {
       middleware: ['languageDetection', 'getMainSponsors', 'getLatestPosts']
     },
     generate: {
+      fallback: true,
       routes: function (callback) {
         const token = '34avQMupdMtN0r8mDGVVTgtt'
         const version = 'published'
