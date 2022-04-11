@@ -16,7 +16,7 @@
               :website="post.content.website.url"
               :image="post.content.logo.filename"
               :title="post.content.title"
-              :intro="post.content.intro"
+              :description="post.content.description"
             />
           </div>
         </div>
@@ -31,7 +31,7 @@
               :website="post.content.website.url"
               :image="post.content.logo.filename"
               :title="post.content.title"
-              :intro="post.content.intro"
+              :description="post.content.description"
             />
           </div>
         </div>

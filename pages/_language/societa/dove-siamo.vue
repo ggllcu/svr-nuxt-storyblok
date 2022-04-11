@@ -69,7 +69,7 @@ export default {
       context.query._storyblok || context.isDev ? 'draft' : 'published'
 
     return context.app.$storyapi
-      .get(`cdn/stories/${context.params.language}/societa/struttura`, {
+      .get(`cdn/stories/${context.params.language}/societa/dove-siamo`, {
         version
       })
       .then((res) => {

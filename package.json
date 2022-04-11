@@ -1,5 +1,5 @@
 {
-  "name": "svr-nuxt-storyblok",
+  "name": "scaligera-valeggio-rugby",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -12,7 +12,9 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.12.0",
+    "@nuxtjs/gtm": "^2.4.0",
     "@nuxtjs/pwa": "^3.0.0-beta.20",
+    "@nuxtjs/sitemap": "^2.4.0",
     "bulma-timeline": "^3.0.4",
     "nuxt": "^2.14.0",
     "nuxt-buefy": "^0.4.4",

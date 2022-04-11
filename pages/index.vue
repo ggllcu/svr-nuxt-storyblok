@@ -28,7 +28,7 @@
                 </div>
                 <b-button
                   tag="a"
-                  href="/it/societa/struttura"
+                  href="/it/societa/dove-siamo"
                   type="is-primary"
                   expanded
                 >
@@ -90,7 +90,7 @@
         </div>
       </div>
     </section>
-    <section class="row section-content">
+    <section class="row section-content alternate-columns">
       <div class="container">
         <component
           :is="blok.component | dashify"
@@ -139,6 +139,8 @@
 </template>
 
 <script>
+import { createSEOMeta } from '~/utils/seo'
+
 export default {
   layout: 'home',
   components: {
@@ -155,6 +157,7 @@ export default {
         version
       })
       .then((res) => {
+        // console.log('res.data.story.content.body[0].columns', res.data.story.content.body[0].columns)
         return res.data
       })
       .catch((res) => {
@@ -185,6 +188,16 @@ export default {
         })
       }
     })
+  },
+  head () {
+    const url = ''
+    // eslint-disable-next-line
+    const { title, description, og_image } = this.story.content.metadata
+
+    return {
+      title,
+      meta: createSEOMeta({ title, description, image: og_image, url })
+    }
   }
 }
 </script>

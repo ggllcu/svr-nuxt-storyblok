@@ -30,6 +30,7 @@ time p {
 
 <script>
 import marked from 'marked'
+import { createSEOMeta } from '~/utils/seo'
 
 export default {
   components: {
@@ -45,7 +46,6 @@ export default {
       version,
       cv: context.store.state.cacheVersion
     }).then((res) => {
-      // console.log('res.data', res.data)
       return res.data
     }).catch((res) => {
       context.error({ statusCode: res.response.status, message: res.response.data })
@@ -100,6 +100,29 @@ export default {
       }
 
       return true
+    }
+  },
+  head () {
+    const url = this.story.full_slug
+    // eslint-disable-next-line
+
+    let title
+    let description
+    let ogImage
+
+    if (this.story.content.metadata) {
+      title = this.story.content.metadata.title
+      description = this.story.content.metadata.description
+      ogImage = this.story.content.metadata.og_image
+    } else {
+      title = this.story.content.title
+      description = this.story.content.description
+      ogImage = this.story.content.image.filename
+    }
+
+    return {
+      title,
+      meta: createSEOMeta({ title, description, image: ogImage, url })
     }
   }
 }

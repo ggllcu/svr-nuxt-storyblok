@@ -5,7 +5,11 @@
         Contattaci
       </h2>
 
-      <form v-if="!status" @submit="sendForm">
+      <form id="contact" name="contact" method="POST">
+        <!-- Start Netlify generated inputs -->
+        <input type="hidden" name="form-name" value="svr_contact">
+        <input name="bot-field" class="is-hidden">
+        <!-- End Netlify generated inputs -->
         <div class="columns">
           <div class="column">
             <b-field label="Nome" class="has-text-white">
@@ -51,11 +55,11 @@
       <p v-if="status === 'success'">
         Abbiamo ricevuto il tuo messaggio
       </p>
-      <h1 v-if="status === 'error'">
+      <h1 v-if="status === 'error'" class="has-text-white">
         Qualcosa è andato storto!
       </h1>
-      <p v-if="status === 'error'">
-        Prova nuovamente o scrivi a info@scaligeravaleggiorugby.com
+      <p v-if="status === 'error'" class="has-text-white">
+        Prova nuovamente o scrivi a info@scaligeravaleggiorugby.it
       </p>
     </div>
   </section>
@@ -69,31 +73,6 @@ export default {
       status: null,
       email: null,
       message: null
-    }
-  },
-  methods: {
-    sendForm (event) {
-      event.preventDefault()
-
-      fetch('https://formcarry.com/s/LkmE2sLfI6LW', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json'
-        },
-        body: JSON.stringify({ email: this.email, message: this.message })
-      })
-        .then(response => response.json())
-        .then((response) => {
-          if (response.code === 200) {
-            this.status = 'success'
-          } else {
-            // Formcarry error
-            this.status = 'error'
-          }
-        })
-        // network error
-        .catch(() => (this.status = 'error'))
     }
   }
 }

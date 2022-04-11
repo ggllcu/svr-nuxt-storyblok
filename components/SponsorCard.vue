@@ -1,5 +1,5 @@
 <template>
-  <div v-if="intro.length > 0 ">
+  <div v-if="description.length > 0 ">
     <nuxt-link :to="url">
       <div class="card">
         <FigureContain :image="image" />
@@ -9,8 +9,8 @@
               {{ title }}
             </h2>
           </div>
-          <div v-if="intro.length > 0" class="content">
-            {{ intro }}
+          <div v-if="description.length > 0" class="content">
+            {{ description }}
             <br>
           </div>
         </div>
@@ -27,8 +27,8 @@
               {{ title }}
             </h2>
           </div>
-          <div v-if="intro.length > 0" class="content">
-            {{ intro }}
+          <div v-if="description.length > 0" class="content">
+            {{ description }}
           </div>
         </div>
       </div>
@@ -57,7 +57,7 @@ export default {
       required: true,
       default: null
     },
-    intro: {
+    description: {
       type: String,
       required: true,
       default: null

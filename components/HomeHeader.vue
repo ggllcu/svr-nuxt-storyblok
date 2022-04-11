@@ -7,7 +7,7 @@
     >
       <b-carousel-item v-for="(carousel, i) in carousels" :key="i">
         <section
-          class="hero is-medium"
+          class="hero is-halfheight"
           :style="`background-image: url('${carousel.background}')`"
         >
           <div class="hero-body has-text-centered">
@@ -55,3 +55,9 @@ export default {
   }
 }
 </script>
+
+<style lang="css" scoped>
+h2.title.is-2 {
+  font-size: clamp(3.125rem, 2.25rem + 4.375vw, 7.5rem);
+}
+</style>

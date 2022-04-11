@@ -60,5 +60,14 @@ header {
   padding: 2rem 1rem;
 }
 
+@include tablet {
+  .alternate-columns {
+    section:nth-child(even) {
+      .columns {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+}
 
 @import "./partials/home.scss"
