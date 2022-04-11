@@ -16,10 +16,7 @@ export default async () => {
     ** Nuxt target
     ** See https://nuxtjs.org/api/configuration-target
     */
-    // target: process.env.TARGET,
-    target: 'static',
-    // ssr: process.env.SSR === 'false' ? false : true,
-    ssr: true,
+    target: process.env.TARGET,
 
     /*
     ** Headers of the page
