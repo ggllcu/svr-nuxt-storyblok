@@ -16,14 +16,19 @@
             <div class="card">
               <div class="card-image">
                 <figure class="image is-3by2">
-                  <img src="https://a.storyblok.com/f/91547/1056x792/8b5d76c954/societa.jpg" alt="Placeholder image">
+                  <NuxtImg
+                    sizes="xs:288px sm:608px md:736px lg:304px"
+                    provider="storyblok"
+                    src="https://a.storyblok.com/f/91547/1056x792/8b5d76c954/societa.jpg"
+                    alt="Società | Scaligera Valeggio Rugby"
+                  />
                 </figure>
               </div>
               <div class="card-content">
                 <div class="content">
-                  <h3 class="title is-5">
+                  <h2 class="title is-5">
                     La società
-                  </h3>
+                  </h2>
                   Informazioni, orari, contatti, numeri utili e altro
                 </div>
                 <b-button
@@ -41,14 +46,19 @@
             <div class="card">
               <div class="card-image">
                 <figure class="image is-3by2">
-                  <img src="https://a.storyblok.com/f/91547/2048x1536/22810097ad/squadre.jpg" alt="Placeholder image">
+                  <NuxtImg
+                    sizes="xs:288px sm:608px md:736px lg:304px"
+                    provider="storyblok"
+                    src="https://a.storyblok.com/f/91547/2048x1536/22810097ad/squadre.jpg"
+                    alt="Squadre | Scaligera Valeggio Rugby"
+                  />
                 </figure>
               </div>
               <div class="card-content">
                 <div class="content">
-                  <h3 class="title is-5">
+                  <h2 class="title is-5">
                     Le squadre
-                  </h3>
+                  </h2>
                   Squadre, allenatori, allenamenti ed orari
                 </div>
                 <b-button
@@ -66,14 +76,19 @@
             <div class="card">
               <div class="card-image">
                 <figure class="image is-3by2">
-                  <img src="https://a.storyblok.com/f/91547/1621x1217/dedc52bfb4/store.jpg" alt="Placeholder image">
+                  <NuxtImg
+                    sizes="xs:288px sm:608px md:736px lg:304px"
+                    provider="storyblok"
+                    src="https://a.storyblok.com/f/91547/1621x1217/dedc52bfb4/store.jpg"
+                    alt="Shop | Scaligera Valeggio Rugby"
+                  />
                 </figure>
               </div>
               <div class="card-content">
                 <div class="content">
-                  <h3 class="title is-5">
+                  <h2 class="title is-5">
                     Shop
-                  </h3>
+                  </h2>
                   Magliette, merchandising, materiale per allenamenti
                 </div>
                 <b-button

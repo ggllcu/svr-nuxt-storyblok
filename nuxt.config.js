@@ -30,11 +30,11 @@ export default async () => {
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         // { hid: 'description', name: 'description', content: 'Scaligera Valeggio Rugby. Società di rugby in provincia di Verona. nati dopo il 2005' },
         ...createSEOMeta({
-          title: "Scaligera Valeggio Rugby | Takai",
-          description: "Scaligera Valeggio Rugby. Società di rugby in provincia di Verona. Per tutti i giocatori nati dopo il 2005",
-          image: "https://a.storyblok.com/f/91547/828x315/48404bb618/placeholder_scaligera_valeggio_rugby.png",
-          url: process.env.HOST_NAME,
-        }),
+          title: 'Scaligera Valeggio Rugby | Takai',
+          description: 'Scaligera Valeggio Rugby. Società di rugby in provincia di Verona. Per tutti i giocatori nati dopo il 2005',
+          image: 'https://a.storyblok.com/f/91547/828x315/48404bb618/placeholder_scaligera_valeggio_rugby.png',
+          url: process.env.HOST_NAME
+        })
       ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -76,7 +76,8 @@ export default async () => {
     buildModules: [
       // Doc: https://github.com/nuxt-community/eslint-module
       '@nuxtjs/eslint-module',
-      '@nuxtjs/google-fonts'
+      '@nuxtjs/google-fonts',
+      '@nuxt/image'
     ],
     /*
     ** Nuxt.js modules
@@ -88,6 +89,7 @@ export default async () => {
       '@nuxtjs/axios',
       '@nuxtjs/sitemap',
       '@nuxtjs/gtm',
+      '@nuxt/image',
       '@nuxtjs/pwa',
       [
         'storyblok-nuxt',
@@ -164,9 +166,13 @@ export default async () => {
         name: 'Scaligera Valeggio Rugby',
         short_name: 'SVR 2015',
         lang: 'it',
-        description: "Scaligera Valeggio Rugby. Società di rugby in provincia di Verona. Per tutti i giocatori nati dopo il 2005"
+        description: 'Scaligera Valeggio Rugby. Società di rugby in provincia di Verona. Per tutti i giocatori nati dopo il 2005'
+      }
+    },
+    image: {
+      storyblok: {
+        baseURL: 'https://img2.storyblok.com'
       }
     }
   }
 }
-
