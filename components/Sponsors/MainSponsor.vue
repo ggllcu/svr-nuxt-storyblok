@@ -6,7 +6,7 @@
       </h2>
       <div class="columns is-centered">
         <div v-for="post in $store.state.mainSponsors" :key="post.content._uid" class="column is-4">
-          <a :href="post.content.website.url">
+          <a :href="post.content.website.url" :aria-label="post.content.title">
             <figure class="image is-3by2" :style="`background-image: url(${post.content.logo.filename})`" />
           </a>
         </div>
