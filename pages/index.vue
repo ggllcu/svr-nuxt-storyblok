@@ -16,7 +16,7 @@
             <div class="card">
               <div class="card-image">
                 <figure class="image is-3by2">
-                  <img src="https://a.storyblok.com/f/91547/1056x792/a98989686d/societa.jpg" alt="Placeholder image">
+                  <img src="https://a.storyblok.com/f/91547/1056x792/8b5d76c954/societa.jpg" alt="Placeholder image">
                 </figure>
               </div>
               <div class="card-content">
@@ -41,7 +41,7 @@
             <div class="card">
               <div class="card-image">
                 <figure class="image is-3by2">
-                  <img src="https://a.storyblok.com/f/91547/2048x1536/f6845d5aff/squadre.jpg" alt="Placeholder image">
+                  <img src="https://a.storyblok.com/f/91547/2048x1536/22810097ad/squadre.jpg" alt="Placeholder image">
                 </figure>
               </div>
               <div class="card-content">
@@ -66,7 +66,7 @@
             <div class="card">
               <div class="card-image">
                 <figure class="image is-3by2">
-                  <img src="https://a.storyblok.com/f/91547/1621x1217/fbfebc35b8/store.jpg" alt="Placeholder image">
+                  <img src="https://a.storyblok.com/f/91547/1621x1217/dedc52bfb4/store.jpg" alt="Placeholder image">
                 </figure>
               </div>
               <div class="card-content">
