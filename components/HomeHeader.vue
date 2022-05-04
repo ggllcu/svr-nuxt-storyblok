@@ -33,22 +33,22 @@ export default {
         {
           text: 'Passione',
           color: 'primary',
-          background: 'https://a.storyblok.com/f/91547/1086x723/eddfefe677/placeholder.jpg'
+          background: 'https://a.storyblok.com/f/91547/828x315/6edd492647/placeholder_scaligera_valeggio_rugby.jpg'
         },
         {
           text: 'Rispetto',
           color: 'info',
-          background: 'https://a.storyblok.com/f/91547/1086x723/eddfefe677/placeholder.jpg'
+          background: 'https://a.storyblok.com/f/91547/828x315/6edd492647/placeholder_scaligera_valeggio_rugby.jpg'
         },
         {
           text: 'Impegno',
           color: 'success',
-          background: 'https://a.storyblok.com/f/91547/1086x723/eddfefe677/placeholder.jpg'
+          background: 'https://a.storyblok.com/f/91547/828x315/6edd492647/placeholder_scaligera_valeggio_rugby.jpg'
         },
         {
           text: 'Famiglia',
           color: 'warning',
-          background: 'https://a.storyblok.com/f/91547/1086x723/eddfefe677/placeholder.jpg'
+          background: 'https://a.storyblok.com/f/91547/828x315/6edd492647/placeholder_scaligera_valeggio_rugby.jpg'
         }
       ]
     }

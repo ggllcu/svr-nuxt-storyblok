@@ -32,7 +32,7 @@ export default async () => {
         ...createSEOMeta({
           title: 'Scaligera Valeggio Rugby | Takai',
           description: 'Scaligera Valeggio Rugby. Società di rugby in provincia di Verona. Per tutti i giocatori nati dopo il 2005',
-          image: 'https://a.storyblok.com/f/91547/828x315/48404bb618/placeholder_scaligera_valeggio_rugby.png',
+          image: 'https://a.storyblok.com/f/91547/828x315/6edd492647/placeholder_scaligera_valeggio_rugby.jpg',
           url: process.env.HOST_NAME
         })
       ],

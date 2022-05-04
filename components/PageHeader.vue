@@ -31,7 +31,7 @@ export default {
     backgroundImage: {
       type: String,
       required: false,
-      default: 'https://a.storyblok.com/f/91547/828x315/48404bb618/placeholder_scaligera_valeggio_rugby.png'
+      default: 'https://a.storyblok.com/f/91547/828x315/6edd492647/placeholder_scaligera_valeggio_rugby.jpg'
     }
   }
 }
