@@ -16,7 +16,7 @@
       </address>
       <hr>
       <p>
-        Made by <a href="https://lucaguglielmi.io">LG</a>
+        Made by <a href="mailto:87c21@live.it">LG</a>
       </p>
     </div>
   </footer>
