@@ -1,5 +1,5 @@
 <template>
-  <section class="header">
+  <section class="header hero is-halfheight">
     <b-carousel
       :autoplay="true"
       :pause-hover="false"
@@ -7,7 +7,6 @@
     >
       <b-carousel-item v-for="(carousel, i) in carousels" :key="i">
         <section
-          class="hero is-halfheight"
           :style="`background-image: url('${carousel.background}')`"
         >
           <div class="hero-body has-text-centered">
