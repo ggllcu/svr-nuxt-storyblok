@@ -35,6 +35,9 @@
         <b-navbar-item tag="nuxt-link" :to="{ path: '/it/news' }">
           News
         </b-navbar-item>
+        <b-navbar-item tag="nuxt-link" :to="{ path: '/it/safeguarding' }">
+          Safeguarding
+        </b-navbar-item>
         <b-navbar-item tag="nuxt-link" :to="{ path: '/#contact' }">
           Contatti
         </b-navbar-item>
